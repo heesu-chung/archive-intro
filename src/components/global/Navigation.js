@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 import "../../styles/common.scss";
 
 const NavWrapper = styled.div`
-    width: 30%;
+    width: 25%;
     height: 45px;
     position: fixed;
     top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100;
+    z-index: 30000;
 
     background: white;
     display: flex;
@@ -20,7 +20,9 @@ const NavWrapper = styled.div`
     border-radius: 30px;
 
     @media (max-width: 800px) {
-        display: none;
+        /* display: none; */
+        width: 90%;
+        margin: 0 auto;
     }
 
     .transition {
