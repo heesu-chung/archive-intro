@@ -40,18 +40,18 @@ const AboutText = styled.p`
 
     filter: blur(6px);
     ${(props) =>
-        props.loc > 1300 + props.idx * 30 &&
+        props.loc > 1200 + props.idx * 30 &&
         css`
-            transition: 1s all ease;
+            transition: 0.5s all ease;
             opacity: 1;
             filter: blur(0px);
             transform: translatey(-15px);
         `}
 
     ${(props) =>
-        props.loc <= 1300 + props.idx * 30 &&
+        props.loc <= 1200 + props.idx * 30 &&
         css`
-            transition: 1s all ease;
+            transition: 0.5s all ease;
             opacity: 0;
             filter: blur(6px);
             transform: translatey(15px);
@@ -73,7 +73,7 @@ const AboutText = styled.p`
         ${(props) =>
             props.loc > 4800 + props.idx * 30 &&
             css`
-                transition: 1s all ease;
+                transition: 0.5s all ease;
                 opacity: 1;
                 filter: blur(0px);
                 transform: translatey(-15px);
@@ -82,7 +82,7 @@ const AboutText = styled.p`
         ${(props) =>
             props.loc <= 4800 + props.idx * 30 &&
             css`
-                transition: 1s all ease;
+                transition: 0.5s all ease;
                 opacity: 0;
                 filter: blur(6px);
                 transform: translatey(15px);
@@ -103,6 +103,7 @@ const ThinkerAbout = () => {
         " ",
         `누군가가 그것을 함께 공감해준다는 건`,
         `우리도 어딘가 속해있단 것을,`,
+        " ",
         `생각을 나눌 수 있다는 것은`,
         `우리에게 또 다른 생각거리를 던져`,
         `보다 더 성장할 수 있는 발판이 되어줍니다`,

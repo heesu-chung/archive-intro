@@ -9,6 +9,9 @@ import pandoraBox from "./assets/gif/pandora-box.gif";
 import success from "./assets/gif/success.gif";
 import ladder from "./assets/gif/ladder.gif";
 import Root from "./assets/gif/Root.gif";
+import plant from "./assets/gif/plant.gif";
+import thinking from "./assets/gif/thinking.gif";
+
 const FeedWrapper = styled.div`
     width: 500px;
     height: 22rem;
@@ -18,16 +21,16 @@ const FeedWrapper = styled.div`
     ${(props) =>
         props.dir === 1 &&
         css`
-            transition: 0.5s all ease;
+            transition: 0.7s all ease;
 
-            transform: translateX(${-(props.loc - 2000) / 3}%);
+            transform: translateX(${-(props.loc - 1800) / 3.5}%);
         `}
     ${(props) =>
         props.dir === -1 &&
         css`
-            transition: 0.5s all ease;
+            transition: 0.7s all ease;
 
-            transform: translateX(${(props.loc - 3300) / 3}%);
+            transform: translateX(${(props.loc - 3600) / 3.5}%);
         `}
 
     @media (min-width: 800px) {
@@ -38,16 +41,16 @@ const FeedWrapper = styled.div`
         ${(props) =>
             props.dir === 1 &&
             css`
-                transition: 0.5s all ease;
+                transition: 0.7s all ease;
 
                 transform: translateX(${-(props.loc - 5600) / 7.5}%);
             `}
         ${(props) =>
             props.dir === -1 &&
             css`
-                transition: 0.5s all ease;
+                transition: 0.7s all ease;
 
-                transform: translateX(${(props.loc - 6900) / 7.5}%);
+                transform: translateX(${(props.loc - 7600) / 7.5}%);
             `}
     }
 `;
@@ -77,6 +80,27 @@ const FeedArticle = styled.div`
 
     @media(min-width: 800px) {
         font-size: 15px;
+        ${(props) =>
+            props.op === 700 &&
+            css`
+                margin-top: 5px;
+                font-size: 16px;
+                color: black;
+            `}
+        ${(props) =>
+            props.op === 300 &&
+            css`
+                margin-top: 25px;
+                font-size: 11px;
+                color: #aaa;
+            `}
+        ${(props) =>
+            props.op === 400 &&
+            css`
+                margin-top: 25px;
+                font-size: 11px;
+                color: #aaa;
+            `}
     }
 `;
 
@@ -87,7 +111,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                 <>
                     <FeedImg src={clothing} />
                     <div style={{ padding: "5px" }}>
-                        <FeedArticle>16th_Apr</FeedArticle>
+                        <FeedArticle op={400}>16th_Apr</FeedArticle>
                         <FeedArticle op={700}>Clothing</FeedArticle>
                         <FeedArticle op={300}>
                             벚꽃 질때 쯤 꽃샘추위가 또 찾아온다
@@ -99,7 +123,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                 <>
                     <FeedImg src={crosswalk} />
                     <div style={{ padding: "5px" }}>
-                        <FeedArticle>4th_Apr</FeedArticle>
+                        <FeedArticle op={400}>4th_Apr</FeedArticle>
                         <FeedArticle op={700}>Cross-walk</FeedArticle>
                         <FeedArticle op={300}>그린라이트의 함정</FeedArticle>
                     </div>
@@ -109,7 +133,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                 <>
                     <FeedImg src={elevator} />
                     <div style={{ padding: "5px" }}>
-                        <FeedArticle>12th_Apr</FeedArticle>
+                        <FeedArticle op={400}>12th_Apr</FeedArticle>
                         <FeedArticle op={700}>Elevator</FeedArticle>
                         <FeedArticle op={300}>
                             느려도 확실한 게 있다
@@ -121,7 +145,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                 <>
                     <FeedImg src={Root} />
                     <div style={{ padding: "5px" }}>
-                        <FeedArticle>16th_Mar</FeedArticle>
+                        <FeedArticle op={400}>16th_Mar</FeedArticle>
                         <FeedArticle op={700}>Root</FeedArticle>
                         <FeedArticle op={300}>
                             뿌리, 마인드 바꾸기 힘든 이유
@@ -133,7 +157,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                 <>
                     <FeedImg src={Monday} />
                     <div style={{ padding: "5px" }}>
-                        <FeedArticle>1st_Apr</FeedArticle>
+                        <FeedArticle op={400}>1st_Apr</FeedArticle>
                         <FeedArticle op={700}>Monday</FeedArticle>
                         <FeedArticle op={300}>
                             문제를 못 피하는 게 문제
@@ -145,7 +169,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                 <>
                     <FeedImg src={pandoraBox} />
                     <div style={{ padding: "5px" }}>
-                        <FeedArticle>27th_Apr</FeedArticle>
+                        <FeedArticle op={400}>27th_Apr</FeedArticle>
                         <FeedArticle op={700}>Pandora Box</FeedArticle>
                         <FeedArticle op={300}>
                             판도라 상자 속 '희망'은 배가 덜 고팠다
@@ -157,7 +181,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                 <>
                     <FeedImg src={success} />
                     <div style={{ padding: "5px" }}>
-                        <FeedArticle>4th_Mar</FeedArticle>
+                        <FeedArticle op={400}>4th_Mar</FeedArticle>
                         <FeedArticle op={700}>Success</FeedArticle>
                         <FeedArticle op={300}>
                             이미 성공해있으니, 일단 받으시죠.
@@ -167,12 +191,34 @@ const Feed = ({ el, idx, loc, dir }) => {
             )}
             {idx === 7 && (
                 <>
-                    <FeedImg src={ladder} />{" "}
+                    <FeedImg src={ladder} />
                     <div style={{ padding: "5px" }}>
-                        <FeedArticle>27th_Mar</FeedArticle>
+                        <FeedArticle op={400}>27th_Mar</FeedArticle>
                         <FeedArticle op={700}>Ladder</FeedArticle>
                         <FeedArticle op={300}>
                             원래 목표를 하나 이루면 다음 목표로 가야됨
+                        </FeedArticle>
+                    </div>
+                </>
+            )}
+            {idx === 8 && (
+                <>
+                    <FeedImg src={thinking} />
+                    <div style={{ padding: "5px" }}>
+                        <FeedArticle op={400}>3rd_Feb</FeedArticle>
+                        <FeedArticle op={700}>Thinking</FeedArticle>
+                        <FeedArticle op={300}>생각의 모양</FeedArticle>
+                    </div>
+                </>
+            )}
+            {idx === 9 && (
+                <>
+                    <FeedImg src={plant} />{" "}
+                    <div style={{ padding: "5px" }}>
+                        <FeedArticle op={400}>16th_Mar</FeedArticle>
+                        <FeedArticle op={700}>Memo Plant</FeedArticle>
+                        <FeedArticle op={300}>
+                            아이디어 나오면 바로 메모하는 습관
                         </FeedArticle>
                     </div>
                 </>

@@ -1,5 +1,5 @@
 import React, { useRef, Suspense } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Stage } from "@react-three/drei";
 
@@ -7,8 +7,8 @@ const ModelWrapper = styled.div`
     width: 100%;
     height: 300px;
     position: relative;
-
-    margin-top: 100px;
+    top: 100px;
+    padding-top: -100px;
     overflow: hidden;
 
     @media (min-width: 800px) {
@@ -18,29 +18,52 @@ const ModelWrapper = styled.div`
 const ContentBlock = styled.div`
     width: 150%;
     height: 300px;
+
+    @media (min-width: 800px) {
+        height: 600px;
+    }
 `;
 
 const Desc = styled.p`
     position: absolute;
     padding: 30px 0;
+    font-size: 80px;
     font-weight: 700;
+
     background: linear-gradient(to right, #f6c366, #d62e6e);
-    ${(props) =>
-        props.op === 1 &&
-        css`
-            background: linear-gradient(to right, #e10e26, #7938b2);
-        `}
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
     left: 12%;
     top: -40px;
-    font-size: 80px;
 
     @media (min-width: 800px) {
         left: 43%;
     }
+`;
+
+const Blank1 = styled.div`
+    position: absolute;
+    background: white;
+    width: 100%;
+    top: 170px;
+    height: 130px;
+    z-index: 7;
+    opacity: 0;
+
+    @media (min-width: 800px) {
+        display: none;
+    }
+`;
+const Blank2 = styled.div`
+    position: absolute;
+    background: white;
+    width: 60%;
+    top: 0px;
+    height: 300px;
+    z-index: 7;
+    opacity: 0;
 `;
 
 function Model({ ...props }) {
@@ -90,10 +113,9 @@ const ThinkerModel = () => {
     return (
         <ModelWrapper>
             <Desc>With</Desc>
-            <Desc style={{ top: "40px" }} op={1}>
-                {" "}
-                REELS
-            </Desc>
+            <Desc style={{ top: "40px" }}>REELS</Desc>
+            <Blank1 />
+            <Blank2 />
             <ContentBlock>
                 <Canvas shadows camera={{ fov: 60 }}>
                     <Suspense fallback={null}>

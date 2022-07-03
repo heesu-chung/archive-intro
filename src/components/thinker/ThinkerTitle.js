@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { locState } from "../../App";
 
 const ThinkerTitleWrapper = styled.div`
@@ -14,10 +14,27 @@ const ThinkerTitleWrapper = styled.div`
     align-items: center;
     text-align: center;
 
-    overflow-y: hidden;
-    overflow-x: hidden;
+    /* overflow-y: hidden;
+    overflow-x: hidden; */
 
     @media (min-width: 800px) {
+        top: 750px;
+    }
+`;
+
+const ThinkerWebWrapper = styled.div`
+    z-index: 3;
+    @media (min-width: 800px) {
+        position: absolute;
+        width: 100%;
+        height: 800px;
+        z-index: 3;
+
+        .container {
+            margin-top: 50px;
+            position: sticky;
+            top: 200px;
+        }
     }
 `;
 
@@ -27,12 +44,16 @@ const ThinkerTitleText = styled.div`
     font-size: 3rem;
     letter-spacing: -3px;
     z-index: 3;
-    @media (min-width: 800px) {
-        font-size: 5rem;
-        opacity: 0.5;
-        filter: blur(2px);
 
-        filter: blur(${(props) => props.loc / 100 + 0.5}px);
+    @media (min-width: 800px) {
+        font-size: 4rem;
+        opacity: 0.5;
+        ${(props) =>
+            props.idx === 2 &&
+            css`
+                top: 330px;
+            `}
+        filter: blur(${(props) => 4 - props.loc / 100}px);
     }
 `;
 
@@ -41,8 +62,16 @@ const ThinkerTitle = () => {
 
     return (
         <ThinkerTitleWrapper>
-            <ThinkerTitleText loc={loc}>Moyang</ThinkerTitleText>
-            <ThinkerTitleText loc={loc}>' the Thinker '</ThinkerTitleText>
+            <ThinkerWebWrapper>
+                <div className="container">
+                    <ThinkerTitleText loc={loc} idx={1}>
+                        Moyang
+                    </ThinkerTitleText>
+                    <ThinkerTitleText loc={loc} idx={2}>
+                        ' the Thinker '
+                    </ThinkerTitleText>
+                </div>
+            </ThinkerWebWrapper>
         </ThinkerTitleWrapper>
     );
 };

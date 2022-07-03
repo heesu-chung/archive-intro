@@ -29,7 +29,8 @@ const ImageWrapper = styled.img`
     @media (min-width: 800px) {
         width: 25rem;
         height: 25rem;
-        top: 450px;
+        /* top: 450px; */
+        top: 230px;
     }
 `;
 
@@ -56,12 +57,14 @@ const BGWrapper = styled.div`
     left: 22.5%;
     z-index: 1;
 
-    transition: 0.4s all ease;
+    transition: 0.2s all ease;
 
     transform: scale(${(props) => (props.loc + 30) * 2}%);
     @media (min-width: 800px) {
-        left: 43%;
-        top: 540px;
+        left: 43.2%;
+        /* top: 540px; */
+        top: 325px;
+        transform: scale(${(props) => (props.loc + 30) * 3}%);
     }
 `;
 

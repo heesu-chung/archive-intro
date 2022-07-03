@@ -1,8 +1,135 @@
 import React from "react";
-import styled from "styled-components";
+import { useRecoilValue } from "recoil";
+import styled, { css, keyframes } from "styled-components";
+import { locState } from "../../App";
+
+import Reel from "./reel/Reel";
+import Phone from "./reel/assets/IPhone_X.png";
+import { HiOutlineChevronDoubleDown } from "react-icons/hi";
+
+const ReelsWrapper = styled.div`
+    position: relative;
+    /* border: 1px solid white; */
+    height: 2000px;
+    margin-top: 100px;
+
+    @media (min-width: 800px) {
+        height: 2500px;
+    }
+`;
+
+const StickyReels = styled.div`
+    position: sticky;
+    top: 100px;
+
+    @media (min-width: 800px) {
+        top: 180px;
+    }
+`;
+
+const DirAnimation = keyframes`
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+`;
+
+const ScrollNext = styled.div`
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 600px;
+
+    opacity: 0;
+    transition: 0.5s all ease;
+    ${(props) =>
+        props.loc > 3000 &&
+        props.loc < 5400 &&
+        css`
+            opacity: 1;
+        `}
+
+    .desc {
+        text-align: center;
+        color: #aaa;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    .dir {
+        color: white;
+        .icon {
+            font-size: 1.3rem;
+            animation: ${DirAnimation} 1.5s 0.3s infinite linear running;
+        }
+    }
+
+    @media (min-width: 800px) {
+        height: 400px;
+        background: black;
+        transition: 0.3s all ease;
+        z-index: 1;
+        top: 200px;
+
+        ${(props) =>
+            props.loc > 7800 &&
+            css`
+                opacity: 1;
+            `};
+        .desc .dir {
+            position: absolute;
+            left: 80%;
+        }
+    }
+`;
+
+const PhoneWrapper = styled.div`
+    @media (max-width: 800px) {
+        visibility: hidden;
+    }
+    @media (min-width: 800px) {
+        position: absolute;
+        visibility: visible;
+        z-index: 2;
+        width: 346px;
+        height: 560px;
+        left: 240px;
+        top: -55px;
+    }
+`;
+
+const video = ["HomeButton", "Metaverse", "Pillow"];
 
 const ThinkerReel = () => {
-    return <div>ThinkerReel</div>;
+    const loc = useRecoilValue(locState);
+
+    return (
+        <ReelsWrapper>
+            <StickyReels>
+                {[...video].map((el, idx) => (
+                    <Reel key={idx} idx={idx} el={el} />
+                ))}
+
+                <PhoneWrapper>
+                    <img src={Phone} alt="" />
+                </PhoneWrapper>
+
+                <ScrollNext loc={loc}>
+                    <p className="desc" loc={loc}>
+                        SCROLL TO NEXT CONTENTS
+                    </p>
+                    <div className="dir" loc={loc}>
+                        <HiOutlineChevronDoubleDown
+                            className="icon"
+                            loc={loc}
+                        />
+                    </div>
+                </ScrollNext>
+            </StickyReels>
+        </ReelsWrapper>
+    );
 };
 
 export default ThinkerReel;

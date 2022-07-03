@@ -15,19 +15,19 @@ const FeedWrapper = styled.div`
     overflow: hidden;
 
     @media (min-width: 800px) {
-        margin-top: 100px;
+        margin-top: 400px;
     }
 `;
 
 const FeedContents = styled.div`
     margin-top: 30px;
-    width: 250%;
+    width: 290%;
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
 
     @media (min-width: 800px) {
-        width: 135%;
+        width: 185%;
     }
 `;
 
@@ -42,9 +42,9 @@ const FeedDesc = styled.p`
     font-size: 24px;
 `;
 
-const imgArr1 = ["clothing", "crosswalk", "elevator", "Root"];
+const imgArr1 = ["clothing", "crosswalk", "elevator", "Root", "plant"];
 
-const imgArr2 = ["Monday", "pandoraBox", "success", "ladder"];
+const imgArr2 = ["Monday", "pandoraBox", "success", "ladder", "thinking"];
 
 const ThinkerFeed = () => {
     const loc = useRecoilValue(locState);
@@ -63,9 +63,10 @@ const ThinkerFeed = () => {
                         style={{ textDecoration: "none" }}
                     >
                         <BsInstagram
+                            className="icon"
                             style={{
                                 fontSize: "2rem",
-                                color: "black",
+                                color: "var(--point-color)",
                             }}
                         />
                     </a>
@@ -76,7 +77,7 @@ const ThinkerFeed = () => {
                         <Feed
                             el={el}
                             key={idx}
-                            idx={idx + 4}
+                            idx={idx + 5}
                             loc={loc}
                             dir={-1}
                         />
