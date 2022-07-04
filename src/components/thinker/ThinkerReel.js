@@ -108,11 +108,10 @@ const ThinkerReel = () => {
     return (
         <ReelsWrapper>
             <StickyReels>
-                <Suspense fallback={null}>
-                    {[...video].map((el, idx) => (
-                        <Reel key={idx} idx={idx} el={el} />
-                    ))}
-                </Suspense>
+                {[...video].map((el, idx) => (
+                    <Reel key={idx} idx={idx} el={el} />
+                ))}
+
                 <PhoneWrapper>
                     <img src={Phone} alt="" />
                 </PhoneWrapper>
