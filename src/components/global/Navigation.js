@@ -69,7 +69,7 @@ const Navigation = () => {
                 Kode Kat
             </span>
             <span className="archive menu" onClick={() => clickPage("archive")}>
-                Archive
+                Dededef
             </span>
         </NavWrapper>
     );
