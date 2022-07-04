@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useRecoilValue } from "recoil";
 import styled, { css, keyframes } from "styled-components";
 import { locState } from "../../App";
@@ -108,10 +108,11 @@ const ThinkerReel = () => {
     return (
         <ReelsWrapper>
             <StickyReels>
-                {[...video].map((el, idx) => (
-                    <Reel key={idx} idx={idx} el={el} />
-                ))}
-
+                <Suspense fallback={null}>
+                    {[...video].map((el, idx) => (
+                        <Reel key={idx} idx={idx} el={el} />
+                    ))}
+                </Suspense>
                 <PhoneWrapper>
                     <img src={Phone} alt="" />
                 </PhoneWrapper>

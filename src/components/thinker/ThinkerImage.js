@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { locState } from "../../App";
 import ladder from "../../assets/ladder.gif";
 import titleLogo from "../../assets/title.png";
@@ -57,14 +57,21 @@ const BGWrapper = styled.div`
     left: 22.5%;
     z-index: 1;
 
-    transition: 0.2s all ease;
+    transition: 0.8s all ease;
 
-    transform: scale(${(props) => (props.loc + 30) * 2}%);
+    /* transform: scale(${(props) => (props.loc + 30) * 2}%); */
+    ${(props) =>
+        props.loc > 100
+            ? css`
+                  transform: scale(40);
+              `
+            : css``}
+
     @media (min-width: 800px) {
         left: 43.2%;
         /* top: 540px; */
         top: 325px;
-        transform: scale(${(props) => (props.loc + 30) * 3}%);
+        /* transform: scale(${(props) => (props.loc + 30) * 3}%); */
     }
 `;
 
