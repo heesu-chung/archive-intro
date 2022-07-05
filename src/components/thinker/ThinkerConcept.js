@@ -48,11 +48,42 @@ const ThinkerConceptText = styled.p`
         filter: blur(6px);
 
         ${(props) =>
+            props.idx === 1 &&
             props.loc > 3000 &&
             css`
-                /* opacity: 0; */
+                filter: blur(6px);
+                opacity: 0;
+            `}
+
+        ${(props) =>
+            props.idx === 2 &&
+            props.loc > 2920 &&
+            css`
+                filter: blur(6px);
+                opacity: 0;
+            `}
+
+        ${(props) =>
+            props.idx === 3 &&
+            props.loc > 2840 &&
+            css`
+                filter: blur(6px);
+                opacity: 0;
+            `}
+        ${(props) =>
+            props.idx === 4 &&
+            props.loc > 2800 &&
+            css`
+                filter: blur(6px);
+                opacity: 0;
+            `}
+
+        ${(props) =>
+            props.loc > 4000 &&
+            css`
                 display: none;
             `}
+
 
         ${(props) =>
             props.idx === 1 &&
