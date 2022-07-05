@@ -363,7 +363,7 @@ const Reel = ({ idx, el }) => {
                     <ReelDescWeb idx={2} loc={loc}>
                         <p className="title">TOYP & GOYH</p>
                         <p>May 7th</p>
-                        <p>ZAAC, Anitta, Tyga•Desce Pro Play (PA PA PA)</p>
+                        <p>ZAAC, Anitta, Tyga - Desce Pro Play (PA PA PA)</p>
                     </ReelDescWeb>
                 </>
             )}
