@@ -24,6 +24,11 @@ const Wrapper = styled.div`
                   background: black;
                   opacity: 0.3;
                   margin-top: -200px;
+                  transition: 0.4s all ease-in-out;
+
+                  &:hover {
+                      opacity: 0;
+                  }
               `
             : css`
                   background: black;

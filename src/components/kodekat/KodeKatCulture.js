@@ -44,6 +44,7 @@ const KodeKatCulture = () => {
                 src={FrontVideo}
                 preload="auto"
                 controls
+                loop={true}
             />
             <Desc style={{ flex: 1 }}>
                 <div className="text-container">
