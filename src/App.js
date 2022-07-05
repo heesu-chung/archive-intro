@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
 import styled from "styled-components";
 import "./styles/common.scss";
 
-// pages
-import Thinker from "./pages/Thinker";
-import KodeKat from "./pages/KodeKat";
-import Archive from "./pages/Archive";
 // components
 import Navigation from "./components/global/Navigation";
 import ScrollTop from "./components/global/ScrollTop";
 
 import { atom, useRecoilValue, useSetRecoilState } from "recoil";
 import Footer from "./components/global/Footer";
+import PageTransition from "./components/global/PageTransition";
 
 const AppWrapper = styled.div`
     width: 100%;
@@ -72,12 +68,7 @@ function App() {
             </MouseLoc>
             <ScrollTop />
             <Navigation />
-            <Routes>
-                <Route path="/" element={<Thinker />} />
-                <Route path="/thinker" element={<Navigate replace to="/" />} />
-                <Route path="/kodekat" element={<KodeKat />} />
-                <Route path="/archive" element={<Archive />} />
-            </Routes>
+            <PageTransition />
             <Footer />
         </AppWrapper>
     );

@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 // components
 import ThinkerAbout from "../components/thinker/ThinkerAbout";
@@ -48,16 +49,22 @@ const ThinkerWrapper = styled.div`
 const Thinker = () => {
     const loc = useRecoilValue(locState);
     return (
-        <ThinkerWrapper loc={loc}>
-            <ThinkerTitle />
-            <ThinkerImage />
-            <ThinkerConcept />
-            <ThinkerAbout />
-            <ThinkerFeed />
-            <ThinkerModel />
-            <ThinkerReel />
-            <ThinkerMore />
-        </ThinkerWrapper>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 1 } }}
+        >
+            <ThinkerWrapper loc={loc}>
+                <ThinkerTitle />
+                <ThinkerImage />
+                <ThinkerConcept />
+                <ThinkerAbout />
+                <ThinkerFeed />
+                <ThinkerModel />
+                <ThinkerReel />
+                <ThinkerMore />
+            </ThinkerWrapper>
+        </motion.div>
     );
 };
 

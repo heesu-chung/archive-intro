@@ -58,20 +58,28 @@ const Navigation = () => {
     };
 
     return (
-        <NavWrapper>
-            <span className="thinker menu" onClick={() => clickPage("thinker")}>
-                Moyang
-            </span>
-            <span
-                className="kode-kat menu"
-                onClick={() => clickPage("kodekat")}
-            >
-                Kode Kat
-            </span>
-            <span className="archive menu" onClick={() => clickPage("archive")}>
-                Archive
-            </span>
-        </NavWrapper>
+        <>
+            <NavWrapper>
+                <span
+                    className="thinker menu"
+                    onClick={() => clickPage("thinker")}
+                >
+                    Moyang
+                </span>
+                <span
+                    className="kode-kat menu"
+                    onClick={() => clickPage("kodekat")}
+                >
+                    Kode Kat
+                </span>
+                <span
+                    className="archive menu"
+                    onClick={() => clickPage("archive")}
+                >
+                    Archive
+                </span>
+            </NavWrapper>
+        </>
     );
 };
 
