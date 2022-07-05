@@ -1,7 +1,9 @@
 import React, { useRef, Suspense } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Stage } from "@react-three/drei";
+import { locState } from "../../App";
+import { useRecoilValue } from "recoil";
 
 const ModelWrapper = styled.div`
     width: 100%;
@@ -19,8 +21,23 @@ const ContentBlock = styled.div`
     width: 150%;
     height: 300px;
 
+    @media (max-width: 800px) {
+        ${(props) =>
+            props.loc < 2300 &&
+            props.loc > 4300 &&
+            css`
+                display: none;
+            `}
+    }
+
     @media (min-width: 800px) {
         height: 600px;
+        ${(props) =>
+            props.loc < 6500 &&
+            props.loc > 8500 &&
+            css`
+                display: none;
+            `}
     }
 `;
 
@@ -110,13 +127,14 @@ function Model({ ...props }) {
 useGLTF.preload("/model.gltf");
 
 const ThinkerModel = () => {
+    const loc = useRecoilValue(locState);
     return (
         <ModelWrapper>
             <Desc>With</Desc>
             <Desc style={{ top: "40px" }}>REELS</Desc>
             <Blank1 />
             <Blank2 />
-            <ContentBlock>
+            <ContentBlock loc={loc}>
                 <Canvas shadows camera={{ fov: 60 }}>
                     <Suspense fallback={null}>
                         <Stage>

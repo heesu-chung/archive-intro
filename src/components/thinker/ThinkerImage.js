@@ -56,10 +56,7 @@ const BGWrapper = styled.div`
     top: 415px;
     left: 22.5%;
     z-index: 1;
-
     transition: 0.8s all ease;
-
-    /* transform: scale(${(props) => (props.loc + 30) * 2}%); */
     ${(props) =>
         props.loc > 100
             ? css`
@@ -69,9 +66,7 @@ const BGWrapper = styled.div`
 
     @media (min-width: 800px) {
         left: 43.2%;
-        /* top: 540px; */
         top: 325px;
-        /* transform: scale(${(props) => (props.loc + 30) * 3}%); */
     }
 `;
 

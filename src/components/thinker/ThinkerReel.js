@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { useRecoilValue } from "recoil";
 import styled, { css, keyframes } from "styled-components";
 import { locState } from "../../App";

@@ -23,14 +23,24 @@ const FeedWrapper = styled.div`
         css`
             transition: 0.7s all ease;
 
-            transform: translateX(${-(props.loc - 1800) / 3.5}%);
+            ${(props) =>
+                props.loc > 1500 &&
+                props.loc < 3700 &&
+                css`
+                    transform: translateX(${-(props.loc - 1800) / 3.5}%);
+                `}
         `}
     ${(props) =>
         props.dir === -1 &&
         css`
             transition: 0.7s all ease;
 
-            transform: translateX(${(props.loc - 3600) / 3.5}%);
+            ${(props) =>
+                props.loc > 1500 &&
+                props.loc < 3700 &&
+                css`
+                    transform: translateX(${(props.loc - 3600) / 3.5}%);
+                `}
         `}
 
     @media (min-width: 800px) {
@@ -40,6 +50,8 @@ const FeedWrapper = styled.div`
         border-radius: 10px;
         ${(props) =>
             props.dir === 1 &&
+            props.loc > 5400 &&
+            props.loc < 7600 &&
             css`
                 transition: 0.7s all ease;
 
@@ -47,6 +59,8 @@ const FeedWrapper = styled.div`
             `}
         ${(props) =>
             props.dir === -1 &&
+            props.loc > 5400 &&
+            props.loc < 7600 &&
             css`
                 transition: 0.7s all ease;
 

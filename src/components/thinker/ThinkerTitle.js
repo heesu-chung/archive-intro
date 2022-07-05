@@ -53,7 +53,8 @@ const ThinkerTitleText = styled.div`
             css`
                 top: 330px;
             `}
-        filter: blur(${(props) => 4 - props.loc / 100}px);
+        filter: blur(${(props) =>
+            props.loc > 1500 ? 0 : 4 - props.loc / 100}px);
     }
 `;
 

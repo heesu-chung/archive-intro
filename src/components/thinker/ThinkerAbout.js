@@ -40,22 +40,28 @@ const AboutText = styled.p`
 
     filter: blur(6px);
     ${(props) =>
-        props.loc > 1200 + props.idx * 30 &&
-        css`
-            transition: 0.5s all ease;
-            opacity: 1;
-            filter: blur(0px);
-            transform: translatey(-15px);
-        `}
+        props.loc > 1200 + props.idx * 30
+            ? css`
+                  transition: 0.5s all ease;
+                  opacity: 1;
+                  filter: blur(0px);
+                  transform: translatey(-15px);
+              `
+            : css`
+                  opacity: 0;
+              `}
 
     ${(props) =>
-        props.loc <= 1200 + props.idx * 30 &&
-        css`
-            transition: 0.5s all ease;
-            opacity: 0;
-            filter: blur(6px);
-            transform: translatey(15px);
-        `}
+        props.loc <= 1200 + props.idx * 30
+            ? css`
+                  transition: 0.5s all ease;
+                  opacity: 0;
+                  filter: blur(6px);
+                  transform: translatey(15px);
+              `
+            : css`
+                  opacity: 0;
+              `}
 
     ${(props) =>
         props.el === " " &&
@@ -71,22 +77,28 @@ const AboutText = styled.p`
         font-weight: 500;
 
         ${(props) =>
-            props.loc > 4800 + props.idx * 30 &&
-            css`
-                transition: 0.5s all ease;
-                opacity: 1;
-                filter: blur(0px);
-                transform: translatey(-15px);
-            `}
+            props.loc > 4800 + props.idx * 30
+                ? css`
+                      transition: 0.5s all ease;
+                      opacity: 1;
+                      filter: blur(0px);
+                      transform: translatey(-15px);
+                  `
+                : css`
+                      opacity: 0;
+                  `}
 
         ${(props) =>
-            props.loc <= 4800 + props.idx * 30 &&
-            css`
-                transition: 0.5s all ease;
-                opacity: 0;
-                filter: blur(6px);
-                transform: translatey(15px);
-            `}
+            props.loc <= 4800 + props.idx * 30
+                ? css`
+                      transition: 0.5s all ease;
+                      opacity: 0;
+                      filter: blur(6px);
+                      transform: translatey(15px);
+                  `
+                : css`
+                      opacity: 0;
+                  `}
     }
 `;
 

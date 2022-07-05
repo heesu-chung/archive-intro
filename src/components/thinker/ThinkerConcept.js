@@ -50,7 +50,8 @@ const ThinkerConceptText = styled.p`
         ${(props) =>
             props.loc > 3000 &&
             css`
-                opacity: 0;
+                /* opacity: 0; */
+                display: none;
             `}
 
         ${(props) =>
