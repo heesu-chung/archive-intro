@@ -11,7 +11,7 @@ const NavWrapper = styled.div`
     top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 30000;
+    z-index: 9999;
 
     background: white;
     display: flex;
