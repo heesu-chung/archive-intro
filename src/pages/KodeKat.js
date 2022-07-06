@@ -39,14 +39,15 @@ const KodeKat = () => {
                 <Blank mobile={50} web={200} />
                 <KodeKatCrew />
                 <Blank mobile={50} web={200} />
-                <Blank mobile={50} web={200} />
+                <Blank mobile={200} web={300} />
                 {/* <KodeKatModel /> */}
                 <KodeKatStory />
-                <Blank mobile={50} web={300} />
+                <Blank mobile={200} web={300} />
                 <KodeKatCulture />
-                <Blank mobile={100} web={400} />
+                <Blank mobile={100} web={500} />
                 <KodeKatProduct />
                 <KodeKatBrand />
+                <Blank mobile={100} web={200} />
                 <KodeKatFin />
             </KodeKatWrapper>
         </motion.div>

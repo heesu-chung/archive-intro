@@ -24,8 +24,10 @@ const CultureImgWrapper = styled.div`
         object-fit: cover;
         width: 100%;
         margin-top: 10px;
-        @media (min-height: 800px) {
-            height: 300px;
+    }
+    @media (min-width: 800px) {
+        img {
+            height: 600px;
         }
     }
 `;

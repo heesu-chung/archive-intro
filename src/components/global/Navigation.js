@@ -52,8 +52,10 @@ const Navigation = () => {
     let navigate = useNavigate();
 
     const clickPage = (pageIdx) => {
+        document.body.style.overflow = "hidden";
         setTimeout(() => {
             navigate(`/${pageIdx}`);
+            document.body.style.overflow = "unset";
         }, 1000);
     };
 
