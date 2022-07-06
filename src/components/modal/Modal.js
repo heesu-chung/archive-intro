@@ -53,7 +53,6 @@ const Modal = () => {
     window.onkeydown = (e) => closeModal();
 
     const closeModal = () => {
-        console.log(src);
         setSrcState("");
         setActiveState(!active);
         document.body.style.overflow = "unset";
