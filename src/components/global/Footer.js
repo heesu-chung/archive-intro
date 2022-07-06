@@ -55,7 +55,7 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <FooterContentWrapper>
-                <p>©2022 Dededef</p>
+                <p>©2022 Dededef_Lab</p>
                 <p>Developed & Designed by Chung HeeSu ( Dededef )</p>
                 <p>-</p>
                 <p>Instagram</p>
