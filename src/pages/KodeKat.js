@@ -41,10 +41,10 @@ const KodeKat = () => {
                 <Blank mobile={50} web={200} />
                 <Blank mobile={50} web={200} />
                 {/* <KodeKatModel /> */}
+                <KodeKatStory />
+                <Blank mobile={50} web={300} />
                 <KodeKatCulture />
                 <Blank mobile={100} web={400} />
-                <KodeKatStory />
-                <Blank mobile={50} web={200} />
                 <KodeKatProduct />
                 <KodeKatBrand />
                 <KodeKatFin />

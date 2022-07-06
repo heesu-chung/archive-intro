@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import FrontVideo from "./assets/FrontVideo.mp4";
+import Culture1 from "./assets/Culture1.jpg";
 import { Desc } from "./KodeKatOverview";
 import TextFn from "./text/TextFn";
 
@@ -9,10 +10,23 @@ const CultureWrapper = styled.div`
     position: relative;
     width: 100%;
     background: black;
-
     @media (min-width: 800px) {
         display: flex;
         flex-direction: row;
+    }
+`;
+
+const CultureImgWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    img {
+        object-fit: cover;
+        width: 100%;
+        margin-top: 10px;
+        @media (min-height: 800px) {
+            height: 300px;
+        }
     }
 `;
 
@@ -21,7 +35,7 @@ const CultureVideo = styled.video`
         width: 100%;
     }
     @media (min-width: 800px) {
-        width: 50%;
+        width: 100%;
         flex: 1;
     }
 `;
@@ -39,13 +53,16 @@ const textArr = [
 const KodeKatCulture = () => {
     return (
         <CultureWrapper>
-            <CultureVideo
-                type="video/mp4"
-                src={FrontVideo}
-                preload="auto"
-                controls
-                loop={true}
-            />
+            <CultureImgWrapper>
+                <CultureVideo
+                    type="video/mp4"
+                    src={FrontVideo}
+                    preload="auto"
+                    controls
+                    loop={true}
+                />
+                <img src={Culture1} alt="" />
+            </CultureImgWrapper>
             <Desc style={{ flex: 1 }}>
                 <div className="text-container">
                     <p className="category">Culture</p>

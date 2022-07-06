@@ -11,6 +11,8 @@ import Story7 from "./assets/Story7.jpg";
 import Story8 from "./assets/Story8.png";
 import Story10 from "./assets/Story10.png";
 import Story11 from "./assets/Story11.png";
+import Meet from "./assets/Meet.png";
+
 import { Desc } from "./KodeKatOverview";
 import TextFn from "./text/TextFn";
 
@@ -73,6 +75,13 @@ const DescWrapper = styled.div`
         width: 100%;
         display: flex;
         flex-direction: row;
+
+        div {
+            img {
+                object-fit: cover;
+                height: 400px;
+            }
+        }
     }
 `;
 
@@ -133,7 +142,9 @@ const KodeKatStory = () => {
             </StoryWrapper>
             <Wrapper op={"transparent"} />
             <DescWrapper>
-                <div className="blank" style={{ flex: 1 }} />
+                <div className="blank" style={{ flex: 1 }}>
+                    <img src={Meet} alt="" />
+                </div>
                 <Desc style={{ flex: 1 }}>
                     <div className="text-container">
                         <p className="category">Content</p>
