@@ -3,6 +3,7 @@ import React from "react-router-dom";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import "../../styles/common.scss";
+import { useState } from "react";
 
 const NavWrapper = styled.div`
     width: 25%;
@@ -48,19 +49,37 @@ const NavWrapper = styled.div`
     }
 `;
 
+const TransitionWrapper = styled.div`
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background: white;
+    z-index: 500;
+`;
+
 const Navigation = () => {
     let navigate = useNavigate();
+    const [transition, setTransition] = useState(false);
 
     const clickPage = (pageIdx) => {
-        document.body.style.overflow = "hidden";
         setTimeout(() => {
+            setTransition(true);
+            document.body.style.overflow = "hidden";
+            window.scrollTo(0, 0);
             navigate(`/${pageIdx}`);
             document.body.style.overflow = "unset";
+        }, 200);
+        setTimeout(() => {
+            setTransition(false);
         }, 1000);
     };
 
     return (
         <>
+            {transition && <TransitionWrapper />}
             <NavWrapper>
                 <span
                     className="thinker menu"

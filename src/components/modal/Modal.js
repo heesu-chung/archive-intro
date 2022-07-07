@@ -39,7 +39,7 @@ const ImgWrapper = styled.div`
 
 const ImgZoomed = styled.img`
     @media (min-width: 800px) {
-        width: 50%;
+        width: 60%;
     }
 `;
 
