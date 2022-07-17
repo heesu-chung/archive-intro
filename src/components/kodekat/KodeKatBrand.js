@@ -88,13 +88,9 @@ const ButtonContainer = styled.div`
 `;
 
 const textArr = [
-    "Kode Kat은 고양이의 외형을 모티브로 한 캐릭터이며,",
-    "표정을 통해 사람들의 장난기 있는 감정을 표현하고자 합니다",
-    ``,
-    "컨텐츠의 확장성과 대중을 지향한 미니멀 디자인을 추구하며,",
-    "컨텐츠 전반에 긍정적인 감정선과",
-    "다양성과 확장,",
-    "연결과 공동체의 가치를 전달하고자 합니다",
+    "Kode Kat은 마플샵을 통해 만나실 수 있습니다",
+    "일상 속 작은 소품들부터 의류까지",
+    "Kode Kat의 라이프 스타일을 바로 만나보세요!",
 ];
 
 const KodeKatBrand = () => {
@@ -103,7 +99,7 @@ const KodeKatBrand = () => {
             <BrandWrapper>
                 <Desc>
                     <div className="text-container">
-                        <p className="category">Brand</p>
+                        <p className="category">Brand Extension</p>
                         <p className="title">Commercial</p>
                         {[...textArr].map((el, idx) => (
                             <TextFn key={idx} el={el} idx={idx} op={"small"} />

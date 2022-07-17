@@ -79,7 +79,7 @@ const ThinkerConceptText = styled.p`
             `}
 
         ${(props) =>
-            props.loc > 4000 &&
+            props.loc > 3500 &&
             css`
                 display: none;
             `}
@@ -90,7 +90,7 @@ const ThinkerConceptText = styled.p`
             css`
                 ${(props) =>
                     props.loc > 1000 &&
-                    props.loc < 3000 &&
+                    props.loc < 3200 &&
                     css`
                         opacity: 1;
                         filter: blur(0px);

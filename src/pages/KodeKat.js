@@ -34,13 +34,11 @@ const KodeKat = () => {
                 <KodeKatFront />
                 <KodeKatIntro />
                 <KodeKatOverview />
-                <Blank mobile={50} web={200} />
+                <Blank mobile={50} web={300} />
                 <KodeKatTheme />
-                <Blank mobile={50} web={200} />
+                <Blank mobile={50} web={300} />
                 <KodeKatCrew />
-                <Blank mobile={50} web={200} />
-                <Blank mobile={200} web={300} />
-                {/* <KodeKatModel /> */}
+                <Blank mobile={50} web={300} />
                 <KodeKatStory />
                 <Blank mobile={200} web={300} />
                 <KodeKatCulture />

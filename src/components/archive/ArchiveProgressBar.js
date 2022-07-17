@@ -25,7 +25,7 @@ const ProgressStatus = styled.div`
     height: 8px;
     border-bottom: 1px solid #aaa;
 
-    width: ${(props) => props.loc / 84}%;
+    width: ${(props) => props.loc / 106}%;
 `;
 
 const ArchiveProgressBar = () => {

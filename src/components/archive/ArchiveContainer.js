@@ -22,13 +22,16 @@ const DescContainer = styled.div`
             font-size: 25px;
             margin: 30px 0;
         }
+        .content {
+        }
     }
 `;
 
 const Desc = styled.p`
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 300;
-    color: #999;
+    color: #777;
+    margin: 5px 0;
     @media (max-width: 800px) {
         text-align: center;
     }

@@ -54,9 +54,9 @@ const ThemeImg = styled.div`
 `;
 
 const textArr = [
-    "Kode Kat은 개발과 창작을 통해 세상을 바라보면서",
-    "현상에 관한 관찰과 고민",
-    "끊임없는 호기심을 가지고 도전하며,",
+    "Kode Kat은 개발과 코드를 통해 세상을 바라보며",
+    "환경과 현상에 대해 고민하고 관찰하며",
+    "호기심을 가지고 끊임없이 도전하면서",
     "스스로 성장하는 라이프 스타일을 추구합니다",
 ];
 
@@ -100,7 +100,7 @@ const KodeKatTheme = () => {
             <Desc>
                 <div className="text-container">
                     <p className="category">Theme</p>
-                    <p className="title">Life Style</p>
+                    <p className="title">Life Style Kode</p>
                     {[...textArr].map((el, idx) => (
                         <TextFn key={idx} el={el} idx={idx} op={"small"} />
                     ))}

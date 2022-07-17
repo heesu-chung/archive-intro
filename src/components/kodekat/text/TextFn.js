@@ -34,18 +34,19 @@ const TextStyled = styled.p`
             font-size: 13px;
             font-weight: 300;
             margin-left: 20px;
+
+            @media (min-width: 800px) {
+                width: 100%;
+                left: 0%;
+                font-size: 16px;
+                text-align: left;
+                margin: 5px 20px;
+            }
             ${(props) =>
                 props.el === "" &&
                 css`
                     margin: 10px 0;
                 `}
-
-            @media (min-width: 800px) {
-                width: 100%;
-                left: 0%;
-                font-size: 15px;
-                text-align: left;
-            }
         `}
 `;
 

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import { atom, useRecoilValue, useSetRecoilState } from "recoil";
 import ArchiveDC from "../components/archive/ArchiveDC";
@@ -47,17 +47,56 @@ import {
     ArchiveGL5,
 } from "../components/archive/ArchiveGL1";
 
+import Interview1 from "../components/archive/assets/interview1.jpg";
+import Interview2 from "../components/archive/assets/interview2.jpg";
+import Interview3 from "../components/archive/assets/interview3.jpg";
+import Interview4 from "../components/archive/assets/interview4.jpg";
+import Interview5 from "../components/archive/assets/interview5.jpg";
+import Interview6 from "../components/archive/assets/interview6.jpg";
+import Interview7 from "../components/archive/assets/interview7.jpg";
+import Interview8 from "../components/archive/assets/interview8.jpg";
+import Interview9 from "../components/archive/assets/interview9.jpg";
+import Interview10 from "../components/archive/assets/interview10.jpg";
+
+import Mid1 from "../components/archive/assets/mid1.jpg";
+import Mid2 from "../components/archive/assets/mid2.jpg";
+import Mid3 from "../components/archive/assets/mid3.jpg";
+import Mid4 from "../components/archive/assets/mid4.jpg";
+import Mid5 from "../components/archive/assets/mid5.jpg";
+import Mid6 from "../components/archive/assets/mid6.jpg";
+import Mid7 from "../components/archive/assets/mid7.jpg";
+import Mid8 from "../components/archive/assets/mid8.jpg";
+import Mid9 from "../components/archive/assets/mid9.jpg";
+import Mid10 from "../components/archive/assets/mid10.jpg";
+
+import Proto1 from "../components/archive/assets/0001.jpg";
+import Proto2 from "../components/archive/assets/0002.jpg";
+import Proto3 from "../components/archive/assets/0003.jpg";
+import Proto4 from "../components/archive/assets/0004.jpg";
+import Proto5 from "../components/archive/assets/0005.jpg";
+
 import Art1 from "../components/archive/assets/art1.jpg";
 import Art2 from "../components/archive/assets/art2.jpg";
 import Art3 from "../components/archive/assets/art3.jpg";
 import Art4 from "../components/archive/assets/art4.jpg";
 import Art5 from "../components/archive/assets/art5.jpg";
+
+import Gif1 from "../components/archive/assets/gif1.gif";
+import Gif2 from "../components/archive/assets/gif2.gif";
+import Gif3 from "../components/archive/assets/gif3.gif";
+import Gif4 from "../components/archive/assets/gif4.gif";
+import Gif5 from "../components/archive/assets/gif5.gif";
+
 import ArchiveArt from "../components/archive/ArchiveArt";
 import Modal from "../components/modal/Modal";
+import ArchiveMoyang from "../components/archive/ArchiveMoyang";
 
 const ArchiveWrapper = styled.div`
-    width: 100%;
+    width: 90%;
     overflow-x: hidden;
+    @media (min-width: 800px) {
+        width: 100%;
+    }
 `;
 
 const Blank = styled.div`
@@ -78,18 +117,53 @@ const ImgContainer = styled.div`
     }
     @media (min-width: 800px) {
         width: 80%;
+        display: grid;
 
-        display: flex;
-        flex-direction: row;
+        ${(props) =>
+            props.item === 1 &&
+            css`
+                /* width: 40%; */
+                grid-template-columns: 100%;
+            `}
+        ${(props) =>
+            props.item === 2 &&
+            css`
+                grid-template-columns: 50% 50%;
+            `}
+        ${(props) =>
+            props.item === 3 &&
+            css`
+                grid-template-columns: 33% 33% 33%;
+            `}
+        ${(props) =>
+            props.item === 4 &&
+            css`
+                grid-template-columns: 25% 25% 25% 25%;
+            `}
+        ${(props) =>
+            props.item === 5 &&
+            css`
+                grid-template-columns: 20% 20% 20% 20% 20%;
+            `}
+        ${(props) =>
+            props.item === 6 &&
+            css`
+                grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+            `}
+        ${(props) =>
+            props.item === 10 &&
+            css`
+                grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+            `}
     }
 `;
 
 const Img = styled.img`
-    width: 50%;
+    width: 100%;
     height: 100%;
     cursor: pointer;
     @media (min-width: 800px) {
-        width: ${(props) => props.w}px;
+        /* width: ${(props) => props.w}px; */
         height: ${(props) => props.h}px;
         object-fit: cover;
     }
@@ -108,12 +182,16 @@ const Archive = () => {
     const setSrcState = useSetRecoilState(srcState);
     const setActiveState = useSetRecoilState(modalActiveState);
     const modalActive = useRecoilValue(modalActiveState);
-
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
     const imgClick = (e) => {
         setSrcState(e.target.currentSrc);
         setActiveState(true);
+        setWidth(e.target.clientWidth);
+        setHeight(e.target.clientHeight);
         document.body.style.overflow = "hidden";
     };
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -121,10 +199,10 @@ const Archive = () => {
             exit={{ opacity: 0, transition: { duration: 1 } }}
         >
             <ArchiveWrapper>
-                {modalActive && <Modal />}
+                {modalActive && <Modal width={width} height={height} />}
                 <ArchiveProgressBar />
-                <Blank web={200} mobile={150} />
-                <ImgContainer>
+                <Blank web={150} mobile={150} />
+                <ImgContainer item={6}>
                     <Img src={StartImg} w="200" h="200" onClick={imgClick} />
                     <Img src={Emo1} w="200" h="200" onClick={imgClick} />
                     <Img src={Emo2} w="200" h="200" onClick={imgClick} />
@@ -134,68 +212,108 @@ const Archive = () => {
                 </ImgContainer>
                 <ArchiveStart />
                 <Blank web={400} mobile={150} />
-                <ArchiveDC />
-                <Blank web={400} mobile={150} />
-                <ImgContainer>
-                    <Img src={Mob1} w="450" h="200" onClick={imgClick} />
-                    <Img src={Mob2} w="400" h="200" onClick={imgClick} />
-                    <Img src={Mob3} w="400" h="200" onClick={imgClick} />
-                </ImgContainer>
-                <ArchiveGraduate />
-                <Blank web={400} mobile={150} />
-                <ImgContainer>
-                    <Img src={Port1} w="550" h="300" onClick={imgClick} />
-                    <Img src={Port2} w="550" h="300" onClick={imgClick} />
-                </ImgContainer>
-                <ArchivePortfolio />
-                <Blank web={400} mobile={150} />
-                <ImgContainer>
-                    <Img src={Service1} w="400" h="200" onClick={imgClick} />
-                    <Img src={Service3} w="400" h="200" onClick={imgClick} />
-                    <Img src={Service2} w="400" h="200" onClick={imgClick} />
-                    <Img src={Service4} w="400" h="200" onClick={imgClick} />
-                </ImgContainer>
-                <ArchiveService />
-                <Blank web={400} mobile={150} />
-                <ImgContainer>
+                <ImgContainer item={3}>
                     <Img src={GL1} w="400" h="230" onClick={imgClick} />
                     <Img src={GL2} w="400" h="230" onClick={imgClick} />
                     <Img src={GL3} w="400" h="230" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveGL1 />
                 <Blank web={400} mobile={150} />
-                <ImgContainer>
+                <ImgContainer item={1}>
                     <Img src={GL4} w="800" h="350" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveGL2 />
                 <Blank web={400} mobile={150} />
-                <ImgContainer>
+                <ImgContainer item={3}>
                     <Img src={GL5} w="400" h="230" onClick={imgClick} />
                     <Img src={GL6} w="400" h="230" onClick={imgClick} />
                     <Img src={GL7} w="400" h="230" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveGL3 />
                 <Blank web={400} mobile={150} />
-                <ImgContainer>
+                <ImgContainer item={1}>
                     <Img src={GL8} w="800" h="350" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveGL4 />
                 <Blank web={400} mobile={150} />
-                <ImgContainer>
+                <ImgContainer item={3}>
                     <Img src={GL9} w="400" h="230" onClick={imgClick} />
                     <Img src={GL10} w="400" h="230" onClick={imgClick} />
                     <Img src={GL11} w="400" h="230" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveGL5 />
                 <Blank web={400} mobile={150} />
-                <ImgContainer>
-                    <Img src={Art1} w="400" h="230" onClick={imgClick} />
+                <ArchiveDC />
+                <Blank web={400} mobile={150} />
+                <ImgContainer item={3}>
+                    <Img src={Mob1} w="450" h="200" onClick={imgClick} />
+                    <Img src={Mob2} w="400" h="200" onClick={imgClick} />
+                    <Img src={Mob3} w="400" h="200" onClick={imgClick} />
+                </ImgContainer>
+                <ImgContainer style={{ marginTop: "10px" }} item={2}>
+                    <Img src={Port1} w="550" h="300" onClick={imgClick} />
+                    <Img src={Port2} w="550" h="300" onClick={imgClick} />
+                </ImgContainer>
+                <ArchiveGraduate />
+                <Blank web={400} mobile={150} />
+                <ImgContainer item={10}>
+                    <Img src={Interview1} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview2} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview3} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview4} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview5} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview6} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview7} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview8} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview9} w="120" h="160" onClick={imgClick} />
+                    <Img src={Interview10} w="120" h="160" onClick={imgClick} />
+                </ImgContainer>
+                <ImgContainer item={5} style={{ margin: "10px auto" }}>
+                    <Img src={Proto1} w="120" h="330" onClick={imgClick} />
+                    <Img src={Proto2} w="120" h="330" onClick={imgClick} />
+                    <Img src={Proto3} w="120" h="330" onClick={imgClick} />
+                    <Img src={Proto4} w="120" h="330" onClick={imgClick} />
+                    <Img src={Proto5} w="120" h="330" onClick={imgClick} />
+                </ImgContainer>
+                <ImgContainer item={6}>
+                    <Img src={Mid1} w="120" h="110" onClick={imgClick} />
+                    <Img src={Mid2} w="120" h="110" onClick={imgClick} />
+                    <Img src={Mid3} w="120" h="110" onClick={imgClick} />
+                    <Img src={Mid4} w="120" h="110" onClick={imgClick} />
+                    <Img src={Mid5} w="120" h="110" onClick={imgClick} />
+                    <Img src={Mid6} w="120" h="110" onClick={imgClick} />
+                </ImgContainer>
+                <ImgContainer item={4} style={{ margin: "10px auto" }}>
+                    <Img src={Mid7} w="120" h="180" onClick={imgClick} />
+                    <Img src={Mid8} w="120" h="180" onClick={imgClick} />
+                    <Img src={Mid9} w="120" h="180" onClick={imgClick} />
+                    <Img src={Mid10} w="120" h="180" onClick={imgClick} />
+                </ImgContainer>
+                <ImgContainer item={4}>
+                    <Img src={Service1} w="300" h="150" onClick={imgClick} />
+                    <Img src={Service3} w="300" h="150" onClick={imgClick} />
+                    <Img src={Service2} w="300" h="150" onClick={imgClick} />
+                    <Img src={Service4} w="300" h="150" onClick={imgClick} />
+                </ImgContainer>
+                <ArchiveService />
+                <Blank web={400} mobile={150} />
+                <ImgContainer item={5}>
                     <Img src={Art2} w="400" h="230" onClick={imgClick} />
+                    <Img src={Art1} w="400" h="230" onClick={imgClick} />
                     <Img src={Art3} w="400" h="230" onClick={imgClick} />
-                    <Img src={Art4} w="400" h="230" onClick={imgClick} />
                     <Img src={Art5} w="400" h="230" onClick={imgClick} />
+                    <Img src={Art4} w="400" h="230" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveArt />
+                <Blank web={400} mobile={150} />
+                <ImgContainer item={5}>
+                    <Img src={Gif2} w="300" h="220" onClick={imgClick} />
+                    <Img src={Gif1} w="300" h="220" onClick={imgClick} />
+                    <Img src={Gif3} w="300" h="220" onClick={imgClick} />
+                    <Img src={Gif5} w="300" h="220" onClick={imgClick} />
+                    <Img src={Gif4} w="300" h="220" onClick={imgClick} />
+                </ImgContainer>
+                <ArchiveMoyang />
             </ArchiveWrapper>
         </motion.div>
     );

@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import FrontVideo from "./assets/FrontVideo.mp4";
 import Culture1 from "./assets/Culture1.jpg";
+import Culture2 from "./assets/Culture2.jpg";
+import Culture3 from "./assets/Culture3.jpg";
 import { Desc } from "./KodeKatOverview";
 import TextFn from "./text/TextFn";
 
@@ -20,10 +22,14 @@ const CultureImgWrapper = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    img {
-        object-fit: cover;
-        width: 100%;
-        margin-top: 10px;
+    div {
+        display: flex;
+        flex-direction: row;
+        img {
+            object-fit: cover;
+            height: 200px;
+            margin-top: 10px;
+        }
     }
     @media (min-width: 800px) {
         img {
@@ -43,13 +49,8 @@ const CultureVideo = styled.video`
 `;
 
 const textArr = [
-    "Kode Kat은 고양이의 외형을 모티브로 한 캐릭터이며,",
-    "표정을 통해 사람들의 장난기 있는 감정을 표현하고자 합니다",
-    ``,
-    "컨텐츠의 확장성과 대중을 지향한 미니멀 디자인을 추구하며,",
-    "컨텐츠 전반에 긍정적인 감정선과",
-    "다양성과 확장,",
-    "연결과 공동체의 가치를 전달하고자 합니다",
+    "캐릭터들에 대한 접근성을 높이고, 친근한 이미지를 더하는 브랜딩을 위해 ",
+    "대중적인 문화적 코드를 활용한 콘텐츠를 제작합니다",
 ];
 
 const KodeKatCulture = () => {
@@ -63,12 +64,16 @@ const KodeKatCulture = () => {
                     controls
                     loop={true}
                 />
-                <img src={Culture1} alt="" />
+                <div>
+                    <img src={Culture1} alt="" />
+                    <img src={Culture2} alt="" />
+                    <img src={Culture3} alt="" />
+                </div>
             </CultureImgWrapper>
             <Desc style={{ flex: 1 }}>
                 <div className="text-container">
-                    <p className="category">Culture</p>
-                    <p className="title">Story Telling</p>
+                    <p className="category">Cultural Code</p>
+                    <p className="title">Branding</p>
                     {[...textArr].map((el, idx) => (
                         <TextFn key={idx} el={el} idx={idx} op={"small"} />
                     ))}

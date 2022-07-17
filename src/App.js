@@ -57,7 +57,7 @@ function App() {
 
     return (
         <AppWrapper onClick={getLoc} loc={loc}>
-            <MouseLoc style={{ top: "40px", left: "20px", zIndex: 2000 }}>
+            {/* <MouseLoc style={{ top: "40px", left: "20px", zIndex: 2000 }}>
                 client-x: {mouseLoc.x} px
             </MouseLoc>
             <MouseLoc style={{ top: "60px", left: "20px", zIndex: 2000 }}>
@@ -65,7 +65,7 @@ function App() {
             </MouseLoc>
             <MouseLoc style={{ top: "80px", left: "20px", zIndex: 2000 }}>
                 client-y: {loc} px
-            </MouseLoc>
+            </MouseLoc> */}
             <ScrollTop />
             <Navigation />
             <PageTransition />

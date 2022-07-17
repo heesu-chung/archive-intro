@@ -126,7 +126,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                     <FeedImg src={clothing} />
                     <div style={{ padding: "5px" }}>
                         <FeedArticle op={400}>16th_Apr</FeedArticle>
-                        <FeedArticle op={700}>Clothing</FeedArticle>
+                        <FeedArticle op={700}>Sakura Wind</FeedArticle>
                         <FeedArticle op={300}>
                             벚꽃 질때 쯤 꽃샘추위가 또 찾아온다
                         </FeedArticle>
@@ -138,7 +138,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                     <FeedImg src={crosswalk} />
                     <div style={{ padding: "5px" }}>
                         <FeedArticle op={400}>4th_Apr</FeedArticle>
-                        <FeedArticle op={700}>Cross-walk</FeedArticle>
+                        <FeedArticle op={700}>Cross-walk Pitfall</FeedArticle>
                         <FeedArticle op={300}>그린라이트의 함정</FeedArticle>
                     </div>
                 </>
@@ -148,7 +148,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                     <FeedImg src={elevator} />
                     <div style={{ padding: "5px" }}>
                         <FeedArticle op={400}>12th_Apr</FeedArticle>
-                        <FeedArticle op={700}>Elevator</FeedArticle>
+                        <FeedArticle op={700}>Use Stairway Plz</FeedArticle>
                         <FeedArticle op={300}>
                             느려도 확실한 게 있다
                         </FeedArticle>
@@ -160,7 +160,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                     <FeedImg src={Root} />
                     <div style={{ padding: "5px" }}>
                         <FeedArticle op={400}>16th_Mar</FeedArticle>
-                        <FeedArticle op={700}>Root</FeedArticle>
+                        <FeedArticle op={700}>Inertia</FeedArticle>
                         <FeedArticle op={300}>
                             뿌리, 마인드 바꾸기 힘든 이유
                         </FeedArticle>
@@ -196,7 +196,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                     <FeedImg src={success} />
                     <div style={{ padding: "5px" }}>
                         <FeedArticle op={400}>4th_Mar</FeedArticle>
-                        <FeedArticle op={700}>Success</FeedArticle>
+                        <FeedArticle op={700}>Your Success</FeedArticle>
                         <FeedArticle op={300}>
                             이미 성공해있으니, 일단 받으시죠.
                         </FeedArticle>
@@ -208,7 +208,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                     <FeedImg src={ladder} />
                     <div style={{ padding: "5px" }}>
                         <FeedArticle op={400}>27th_Mar</FeedArticle>
-                        <FeedArticle op={700}>Ladder</FeedArticle>
+                        <FeedArticle op={700}>Next Ladder</FeedArticle>
                         <FeedArticle op={300}>
                             원래 목표를 하나 이루면 다음 목표로 가야됨
                         </FeedArticle>
@@ -220,7 +220,7 @@ const Feed = ({ el, idx, loc, dir }) => {
                     <FeedImg src={thinking} />
                     <div style={{ padding: "5px" }}>
                         <FeedArticle op={400}>3rd_Feb</FeedArticle>
-                        <FeedArticle op={700}>Thinking</FeedArticle>
+                        <FeedArticle op={700}>Shape of Thoughts</FeedArticle>
                         <FeedArticle op={300}>생각의 모양</FeedArticle>
                     </div>
                 </>

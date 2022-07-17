@@ -38,19 +38,22 @@ const ImgWrapper = styled.div`
 `;
 
 const ImgZoomed = styled.img`
+    width: 100vw;
+    height: ${(props) => (props.height / props.width) * 100}vw;
     @media (min-width: 800px) {
-        width: 60%;
+        width: ${(props) => (props.width / props.height) * 100}vh;
+        height: 100vh;
     }
 `;
 
-const Modal = () => {
+const Modal = ({ width, height }) => {
     const active = useRecoilValue(modalActiveState);
     const src = useRecoilValue(srcState);
 
     const setSrcState = useSetRecoilState(srcState);
     const setActiveState = useSetRecoilState(modalActiveState);
 
-    window.onkeydown = (e) => closeModal();
+    // window.onkeydown = (e) => closeModal();
 
     const closeModal = () => {
         setSrcState("");
@@ -62,7 +65,7 @@ const Modal = () => {
             <ModalWrapper active={active} />
             <ImgWrapper onClick={closeModal}>
                 <div>
-                    <ImgZoomed src={src} alt="" />
+                    <ImgZoomed src={src} alt="" width={width} height={height} />
                 </div>
             </ImgWrapper>
         </>

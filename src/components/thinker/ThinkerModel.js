@@ -20,7 +20,7 @@ const ModelWrapper = styled.div`
 const ContentBlock = styled.div`
     width: 150%;
     height: 300px;
-
+    cursor: grab;
     @media (max-width: 800px) {
         ${(props) =>
             props.loc < 2300 &&
@@ -38,6 +38,9 @@ const ContentBlock = styled.div`
             css`
                 display: none;
             `}
+        :active {
+            cursor: grabbing;
+        }
     }
 `;
 
@@ -85,7 +88,6 @@ const Blank2 = styled.div`
 
 function Model({ ...props }) {
     const group = useRef();
-
     const { nodes, materials } = useGLTF("/model.gltf");
     return (
         <group ref={group} {...props} dispose={null}>
@@ -128,6 +130,7 @@ useGLTF.preload("/model.gltf");
 
 const ThinkerModel = () => {
     const loc = useRecoilValue(locState);
+
     return (
         <ModelWrapper>
             <Desc>With</Desc>
