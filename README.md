@@ -48,7 +48,7 @@
 - position: sticky 값을 이용한 동적 타이틀 텍스트, 설명 텍스트 구현 + 스크롤 값 변경시 blur 값, opacity값 변경 구현  
 ![archive02](https://user-images.githubusercontent.com/68191058/179493725-5c222d1b-433a-43af-8652-3e6ac14e5ada.gif)  
 
-- 스크롤 값 변경시 텍스트 위치 translateX 값 변경, filter(blur)값 변경, opacity값 변경 구현  
+- 스크롤 값 변경시 텍스트 위치 translateY 값 변경, filter(blur)값 변경, opacity값 변경 구현  
 ![archive03](https://user-images.githubusercontent.com/68191058/179493775-60e3b9d5-f043-4f76-a537-3dd16610a11b.gif)  
 
 - 스크롤 값 변경시 이미지 슬라이드(slide) 정방향 / 역방향 구현  
