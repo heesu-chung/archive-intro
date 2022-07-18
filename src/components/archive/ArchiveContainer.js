@@ -8,11 +8,12 @@ const ContainerWrapper = styled.div`
 const DescContainer = styled.div`
     .title {
         letter-spacing: 0.5px;
-        font-weight: 500;
-        font-size: 18px;
+        font-weight: 700;
+        font-size: 22px;
         margin: 20px 0;
         @media (max-width: 800px) {
-            text-align: center;
+            text-align: left;
+            margin-top: 40px;
         }
     }
 
@@ -28,20 +29,46 @@ const DescContainer = styled.div`
 `;
 
 const Desc = styled.p`
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
-    color: #777;
+    color: #444;
     margin: 5px 0;
     @media (max-width: 800px) {
-        text-align: center;
+        /* text-align: left; */
+        display: none;
     }
     @media (min-width: 800px) {
         margin-left: 1%;
     }
 `;
 
+const DescMobile = styled.span`
+    font-size: 16px;
+    font-weight: 300;
+    color: #444;
+    /* margin: 10px 5px; */
+    text-align: left;
+    @media (min-width: 800px) {
+        display: none;
+    }
+`;
+
+const DescMobileTitle = styled.p`
+    font-size: 16px;
+    font-weight: 300;
+    color: #444;
+    margin: 10px 0;
+    text-align: left;
+    @media (min-width: 800px) {
+        display: none;
+    }
+`;
+
 const ArchiveContainer = ({ title, content }) => {
     const newContent = content !== undefined ? content.split(". ") : [""];
+    const mobileContent = content !== undefined ? content.split(".") : [""];
+    const titleMobileContent = mobileContent.slice(0, 2);
+    const newMobileContent = mobileContent.slice(2).join(" ");
 
     return (
         <ContainerWrapper>
@@ -50,6 +77,12 @@ const ArchiveContainer = ({ title, content }) => {
                 <div className="content">
                     {[...newContent].map((el, idx) => (
                         <Desc key={idx}>{el}</Desc>
+                    ))}
+                    {[...titleMobileContent].map((el, idx) => (
+                        <DescMobileTitle key={idx}>{el}</DescMobileTitle>
+                    ))}
+                    {[...newMobileContent].map((el, idx) => (
+                        <DescMobile key={idx}>{el}</DescMobile>
                     ))}
                 </div>
             </DescContainer>
