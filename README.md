@@ -19,12 +19,12 @@
 
 ### global 기능
 
-반응형 디자인 구현
-- 800px 이하 모바일, 태블릿 / 800px 이상 웹
+- 반응형 디자인 구현(800px 이하 모바일, 태블릿 / 800px 이상 웹)
 
 - react-router-dom의 useLocation() 메서드를 이용한 Navigation 요소 구현
 
-- 페이지 이동시 window.scrollTo 메서드 이용, 다음 페이지 최상단으로 이동하는 기능 구현
+- 페이지 이동시 window.scrollTo 메서드 이용, 다음 페이지 최상단으로 이동하는 기능 구현  
+![archive09](https://user-images.githubusercontent.com/68191058/179494487-5a9fddb4-c60d-4ac2-8b1f-e8d78f709393.gif)  
 
 - 페이지 변경시 setTimeout과 framer-motion을 이용한 Fade In / Fade out 기능 구현
 
@@ -40,29 +40,37 @@
 
 
 
-### Moyang 페이지
+### Moyang 페이지  
 
-- 스크롤 값 변경시 발산형 원 애니메이션, 키프레임 구현
+- 스크롤 값 변경시 발산형 원 애니메이션, 키프레임 구현  
+![archive01](https://user-images.githubusercontent.com/68191058/179493611-212d2902-1101-4fa1-b25b-93fe80890fbd.gif)  
 
-- position: sticky 값을 이용한 동적 타이틀 텍스트, 설명 텍스트 구현 + 스크롤 값 변경시 blur 값, opacity값 변경 구현
+- position: sticky 값을 이용한 동적 타이틀 텍스트, 설명 텍스트 구현 + 스크롤 값 변경시 blur 값, opacity값 변경 구현  
+![archive02](https://user-images.githubusercontent.com/68191058/179493725-5c222d1b-433a-43af-8652-3e6ac14e5ada.gif)  
 
-- 스크롤 값 변경시 텍스트 위치 translateX 값 변경, filter(blur)값 변경, opacity값 변경 구현
+- 스크롤 값 변경시 텍스트 위치 translateX 값 변경, filter(blur)값 변경, opacity값 변경 구현  
+![archive03](https://user-images.githubusercontent.com/68191058/179493775-60e3b9d5-f043-4f76-a537-3dd16610a11b.gif)  
 
-- 스크롤 값 변경시 이미지 슬라이드(slide) 정방향 / 역방향 구현
+- 스크롤 값 변경시 이미지 슬라이드(slide) 정방향 / 역방향 구현  
+![archive04](https://user-images.githubusercontent.com/68191058/179493816-41a4fc21-7534-4bdb-8328-5e7b52266914.gif)  
 
 - 텍스트 gradient 구현
 
-- 스크롤 변경 시 특정 구간 배경 Dark모드/Light모드 전환 구현
+- 스크롤 변경 시 특정 구간 배경 Dark모드/Light모드 전환 구현  
+![archive07](https://user-images.githubusercontent.com/68191058/179494246-55b10526-c68c-4ec2-9870-4cdf853350a5.gif)  
 
-- 3D 블렌더 gltf 모델 추출 및 jsxgltf 라이브러리 이용, three.js 서브셋 @react-three/fiber, @react-three/drei 를 이용하여 gltf 모델 mesh값 선언. 
+- 3D 블렌더 gltf 모델 추출 및 jsxgltf 라이브러리 이용, three.js 서브셋 @react-three/fiber, @react-three/drei 를 이용하여 gltf 모델 mesh값 선언.  
+![archive05](https://user-images.githubusercontent.com/68191058/179494095-d4847dfc-c4b8-43b7-b84a-c721fce553bc.gif)  
 
 - @react-three/fiber Canvas 컴포넌트내 camera / light / orbitControl 컴포넌트 attribute 사용 및 gltf 모델 회전 및 인터랙션 구현
 
 - Suspense 컴포넌트 속성 fallback={null}을 이용해 브라우저 렌더링시 Canvas 내 모델의 렌더링 지연을 통한 최적화 구현
 
-- video 태그 사용간 스크롤 값에 따른 영상 위치 변경 애니메이션과 video태그 attribute 중 재생,정지, 볼륨, 속도 인터페이스 포함된 controls, 스크롤 위치에 따른 muted boolean값 적용과 loop boolean값 적용
+- video 태그 사용간 스크롤 값에 따른 영상 위치 변경 애니메이션과 video태그 attribute 중 재생,정지, 볼륨, 속도 인터페이스 포함된 controls, 스크롤 위치에 따른 muted boolean값 적용과 loop boolean값 적용  
+![archive06](https://user-images.githubusercontent.com/68191058/179494175-4570e127-5c29-447f-9e66-4956815f657a.gif)  
 
-- sticky 특성을 이용한 스크롤 이동간 비디오, 모바일폰 이미지 고정 구현
+- sticky 특성을 이용한 스크롤 이동간 비디오, 모바일폰 이미지 고정 구현  
+![archive08](https://user-images.githubusercontent.com/68191058/179494355-30bc82d5-0847-4e96-a6d9-b71e195d99f6.gif)  
 
 - 반복되는 아래 방향 아이콘 애니메이션 키프레임 구현
 
@@ -81,11 +89,13 @@
 
 - display: flex를 이용한 레이아웃 구성
 
-- setTimeout을 이용하여 3000ms 주기로 이미지 확대/축소 및 투명도 변경 구현
+- setTimeout을 이용하여 3000ms 주기로 이미지 확대/축소 및 투명도 변경 구현  
+![archive10](https://user-images.githubusercontent.com/68191058/179494550-83552c55-3d71-4c70-b340-8f2ce541a3ca.gif)  
 
 - 이미지 마우스 hover시 이미지 확대/축소, 투명도 변경 구현
 
-- Image Infinite Auto Slide 구현 - 10장의 이미지 세트에 동일한 추가 이미지 세트를 이어붙인 후, 이어붙인 이미지 세트의 첫번째 이미지가 기존 세트의 첫번째 이미지 위치에 도달할 시 가장 처음 이미지 위치로 translateX의 형식으로 구현
+- Image Infinite Auto Slide 구현 - 10장의 이미지 세트에 동일한 추가 이미지 세트를 이어붙인 후, 이어붙인 이미지 세트의 첫번째 이미지가 기존 세트의 첫번째 이미지 위치에 도달할 시 가장 처음 이미지 위치로 translateX의 형식으로 구현  
+![archive11](https://user-images.githubusercontent.com/68191058/179494659-81ed46c1-b385-41f9-8753-778c733a1665.gif)  
 
 - background linear-gradient 구현시 크로스 브라우징 이슈
 
@@ -96,9 +106,11 @@
 
 ### Archive 페이지
 
-- 스크롤 위치 값에 따른 진행도를 시각화한 최상단 ProgressBar 구현
+- 스크롤 위치 값에 따른 진행도를 시각화한 최상단 ProgressBar 구현  
+![archive12](https://user-images.githubusercontent.com/68191058/179494697-b64a8666-bbcf-4a71-9ded-992823e54dbe.gif)  
 
-- 이미지 클릭시 클릭된 이미지 및 화면 비율에 맞게 출력하는 모달 작동 구현, 아무 곳이나 클릭하면 기존 페이지로 돌아가는 기능 구현
+- 이미지 클릭시 클릭된 이미지 및 화면 비율에 맞게 출력하는 모달 작동 구현, 아무 곳이나 클릭하면 기존 페이지로 돌아가는 기능 구현  
+![archive13](https://user-images.githubusercontent.com/68191058/179494735-233fc3be-72ad-4812-87e5-d27eff720b6b.gif)  
 
 - display: grid 구현 및 이미지 개수에 따른 이미지 비율 조정 및 구분 구현
 
@@ -120,7 +132,7 @@
 
 ## 회고
 
-#### DOM의 직접 조작 및 html, css, js를 이용한 다양한 동적 애니메이션, 인터랙션 요소를 경험한 첫 프로젝트입니다.
+#### DOM의 직접 조작 및 html, css, js를 이용한 다양한 동적 애니메이션, 인터랙션 요소를 구현한 프로젝트입니다.
 
 브라우저 렌더링 성능의 한계는 어디까지인지, 외부 DB를 이용한 이미지 데이터 송수신 과정에 발생하는 딜레이가 페이지를 경험하는 사용자 입장에서 어떻게 느껴질지, 페이지 내 대량의 이미지가 들어가는 경우 어느 정도 렌더링 성능이 떨어지는지에 대해 직접 경험하고 고민해볼 수 있었고, 디자인, 인터랙션 구성요소와 렌더링 성능 사이에 어떤 타협이 필요한지에 대해 생각해 볼 수 있는 프로젝트였습니다.
 
@@ -132,7 +144,7 @@ Moyang 페이지에 스크롤 위치 정보를 props로 받아 커지는 circle 
 
 KodeKat 페이지 또한 고해상도로 출력되었던 이미지들의 크기를 모두 줄였으며, 이미지 개수에 대해서도 굳이 필요한 내용이 아니면 축소시키거나 3D gltf 모델파트는 삭제하는 과정을 거쳤고, 그만큼 인터랙션 가능한 요소의 숫자도 줄였습니다. 
 
-Archive 페이지 내 영상은 용량을 극단적으로 줄이기 위해 재렌더링이 진행되었고, '모바일 서비스 디자인 프로세스' 파트의 이미지들은 모두 resize 되었으나 해당 이미지 정보들이 프로세스 과정에 초점이 맞춰져 있기에 삭제하지 않았습니다. 때문에 해당 컴포넌트가 있는 위치를 스크롤이 지날 때 이미지 로딩 과정에서 30여개의 이미지 로드에 약간의 버벅임이 발생합니다.
+Archive 페이지 내 영상은 용량을 극단적으로 줄이기 위해 영상툴을 이용한 이 진행되었고, '모바일 서비스 디자인 프로세스' 파트의 이미지들은 모두 resize 되었으나 해당 이미지 정보들이 프로세스 과정에 초점이 맞춰져 있기에 삭제하지 않았습니다. 때문에 해당 컴포넌트가 있는 위치를 스크롤이 지날 때 이미지 로딩 과정에서 30여개의 이미지 로드에 약간의 버벅임이 발생합니다.
 
 전역 state 관리 라이브러리로 기존의 익숙한 리덕스보다 가벼운 recoil을 처음으로 사용하게 된 계기도 위와 같은 맥락입니다. 
 
