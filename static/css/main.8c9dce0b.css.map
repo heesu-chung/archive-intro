@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.8c9dce0b.css","mappings":"AAAA,MACI,qBAAc,CACd,oBAAa,CACb,sBAAe","sources":["styles/common.scss"],"sourcesContent":[":root {\r\n    --point-color: #84bcca;\r\n    --base-color: #fafafa;\r\n    --second-color: #84bcca;\r\n}\r\n"],"names":[],"sourceRoot":""}
