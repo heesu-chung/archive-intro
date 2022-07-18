@@ -1,7 +1,7 @@
 ## Demo Link
 [https://archive-640e9.web.app/](https://archive-640e9.web.app/)
 
-## 제작 기간 & 참여 인원  
+## 제작 기간
 6월 28일 ~ 7월 7일 (10일)  
 1인 개발
 
