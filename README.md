@@ -19,8 +19,7 @@
 
 ### global 기능
 
-반응형 디자인 구현
-- 800px 이하 모바일, 태블릿 / 800px 이상 웹
+- 반응형 디자인 구현(800px 이하 모바일, 태블릿 / 800px 이상 웹)
 
 - react-router-dom의 useLocation() 메서드를 이용한 Navigation 요소 구현
 
