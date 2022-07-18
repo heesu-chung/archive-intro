@@ -1,70 +1,139 @@
-# Getting Started with Create React App
+## Demo Link
+[https://archive-640e9.web.app/](https://archive-640e9.web.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 제작 기간
+6월 28일 ~ 7월 7일 (10일)  
+1인 개발
 
-## Available Scripts
 
-In the project directory, you can run:
+## 프로젝트 개요
+3D 그래픽 라이브러리인 OpenGL과 C언어로 진행했던 대학 프로젝트 영상결과물들과 설명, 디자인 프로세스/영상/일러스트 등이 포함된 아카이브 1개 페이지,  
 
-### `npm start`
+2019년부터 개인 프로젝트의 일환으로 작업해온 2D/3D 캐릭터 기획/디자인/콘텐츠/브랜딩에 대한 2개 페이지로 구성된 정적 웹 페이지 프로젝트입니다.   
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+프레임워크로 React, 전역 state 관리로 recoil을 사용했으며, three.js 일부 기능을 사용하여 블렌더로 작업한 gltf 파일을 로드했습니다.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+반응형 디자인으로 구현되었으며, 스크롤 추적 기능과 스크롤 위치에 따른 스타일링 변화, css3 애니메이션 구현과 html5 video 태그 등을 사용하였으며, 이외 세부적인 기능 구현들은 아래에 작성되었습니다.  
 
-### `npm test`
+## 기능 구현
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### global 기능
 
-### `npm run build`
+반응형 디자인 구현
+- 800px 이하 모바일, 태블릿 / 800px 이상 웹
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- react-router-dom의 useLocation() 메서드를 이용한 Navigation 요소 구현
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 페이지 이동시 window.scrollTo 메서드 이용, 다음 페이지 최상단으로 이동하는 기능 구현
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 페이지 변경시 setTimeout과 framer-motion을 이용한 Fade In / Fade out 기능 구현
 
-### `npm run eject`
+- 개발 단계에서 마우스, 스크롤 이벤트 발생시 DOM 내 pageX, pageY, scrollY 값을 받아 특정 위치에서의 동적 인터랙션시 트리거 역할 구현
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 스크롤 위치의 전역 state 관리를 위한 Recoil atom 객체 선언 및 useSetRecoilState, useRecoilValue 메서드 사용
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 웹킷 스크롤바 스타일링 변경
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- common.scss 스타일링 파일을 이용한 point, base color 글로벌 변수화
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Moyang 페이지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 스크롤 값 변경시 발산형 원 애니메이션, 키프레임 구현
 
-### Analyzing the Bundle Size
+- position: sticky 값을 이용한 동적 타이틀 텍스트, 설명 텍스트 구현 + 스크롤 값 변경시 blur 값, opacity값 변경 구현
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 스크롤 값 변경시 텍스트 위치 translateX 값 변경, filter(blur)값 변경, opacity값 변경 구현
 
-### Making a Progressive Web App
+- 스크롤 값 변경시 이미지 슬라이드(slide) 정방향 / 역방향 구현
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- 텍스트 gradient 구현
 
-### Advanced Configuration
+- 스크롤 변경 시 특정 구간 배경 Dark모드/Light모드 전환 구현
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- 3D 블렌더 gltf 모델 추출 및 jsxgltf 라이브러리 이용, three.js 서브셋 @react-three/fiber, @react-three/drei 를 이용하여 gltf 모델 mesh값 선언. 
 
-### Deployment
+- @react-three/fiber Canvas 컴포넌트내 camera / light / orbitControl 컴포넌트 attribute 사용 및 gltf 모델 회전 및 인터랙션 구현
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Suspense 컴포넌트 속성 fallback={null}을 이용해 브라우저 렌더링시 Canvas 내 모델의 렌더링 지연을 통한 최적화 구현
 
-### `npm run build` fails to minify
+- video 태그 사용간 스크롤 값에 따른 영상 위치 변경 애니메이션과 video태그 attribute 중 재생,정지, 볼륨, 속도 인터페이스 포함된 controls, 스크롤 위치에 따른 muted boolean값 적용과 loop boolean값 적용
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- sticky 특성을 이용한 스크롤 이동간 비디오, 모바일폰 이미지 고정 구현
+
+- 반복되는 아래 방향 아이콘 애니메이션 키프레임 구현
+
+- 스크롤 값 변경에 따른 비디오 설명 텍스트 고정 및 Opacity 값을 이용한 Fade in Fade out 전환 구현
+
+- 스크롤 값 변경시 video layout의 좌우 이동 인터랙션 구현
+
+- 인스타그램 아이콘 색상변경/크기변경 애니메이션 및 연결 링크 구현
+
+
+
+
+
+
+### Kode Kat 페이지
+
+- display: flex를 이용한 레이아웃 구성
+
+- setTimeout을 이용하여 3000ms 주기로 이미지 확대/축소 및 투명도 변경 구현
+
+- 이미지 마우스 hover시 이미지 확대/축소, 투명도 변경 구현
+
+- Image Infinite Auto Slide 구현 - 10장의 이미지 세트에 동일한 추가 이미지 세트를 이어붙인 후, 이어붙인 이미지 세트의 첫번째 이미지가 기존 세트의 첫번째 이미지 위치에 도달할 시 가장 처음 이미지 위치로 translateX의 형식으로 구현
+
+- background linear-gradient 구현시 크로스 브라우징 이슈
+
+
+
+
+
+
+### Archive 페이지
+
+- 스크롤 위치 값에 따른 진행도를 시각화한 최상단 ProgressBar 구현
+
+- 이미지 클릭시 클릭된 이미지 및 화면 비율에 맞게 출력하는 모달 작동 구현, 아무 곳이나 클릭하면 기존 페이지로 돌아가는 기능 구현
+
+- display: grid 구현 및 이미지 개수에 따른 이미지 비율 조정 및 구분 구현
+
+- 반복되는 레이아웃 특성에 맞춘 최적화를 위한 텍스트용 컴포넌트 선언  
+
+
+
+
+## 기술 스택
+
+- react, recoil, three.js
+- react-router-dom, recoilize, styled-components, framer-motion, @react-three/fiber, @react-three/drei, three-gltf-loader, react-icons
+
+
+
+
+
+
+
+## 회고
+
+#### DOM의 직접 조작 및 html, css, js를 이용한 다양한 동적 애니메이션, 인터랙션 요소를 경험한 첫 프로젝트입니다.
+
+브라우저 렌더링 성능의 한계는 어디까지인지, 외부 DB를 이용한 이미지 데이터 송수신 과정에 발생하는 딜레이가 페이지를 경험하는 사용자 입장에서 어떻게 느껴질지, 페이지 내 대량의 이미지가 들어가는 경우 어느 정도 렌더링 성능이 떨어지는지에 대해 직접 경험하고 고민해볼 수 있었고, 디자인, 인터랙션 구성요소와 렌더링 성능 사이에 어떤 타협이 필요한지에 대해 생각해 볼 수 있는 프로젝트였습니다.
+
+이전 토이 프로젝트들에서는 연산이 필요한 인터페이스 인터랙션 구현보다는 레이아웃 마크업에 초점을 맞췄었고 RESTapi를 통한 백엔드와의 axios 통신을 구현할 때는 브라우저 성능보다는 네트워크 통신의 성능에 의존했습니다.
+
+이번 프로젝트에서 동적 인터페이스 및 애니메이션 구현만으로 브라우저 렌더링 성능이 크게 하락하는 경험을 했고, 이는 사용자 경험(UX)에 있어 치명적이었습니다. 그 과정에서 몇몇 UI, 애니메이션 요소에 대해선 정말 필요한 것인지 고민하고 판단할 필요가 있었으며, 그 결과 일부 인터랙션 요소들을 삭제하거나 브라우저의 연산 부담을 덜어내는 방식으로 타협하고 구현하였습니다.
+
+Moyang 페이지에 스크롤 위치 정보를 props로 받아 커지는 circle 인터랙션은 트리거 형식의 키프레임 애니메이션으로 대체되었고, 카드 슬라이드 요소는 스크롤이 특정 위치 밖에 있을 때 렌더링 하지 않는 조건부 렌더링으로 변경되었습니다. 3D gltf 모델 갯수와 하나의 모델이 가지는 particle의 갯수도 줄었습니다. 전반적으로 이미지들의 용량도 기존에 비해 1/5~1/10 수준으로 줄여 렌더링 속도를 높였습니다.
+
+KodeKat 페이지 또한 고해상도로 출력되었던 이미지들의 크기를 모두 줄였으며, 이미지 개수에 대해서도 굳이 필요한 내용이 아니면 축소시키거나 3D gltf 모델파트는 삭제하는 과정을 거쳤고, 그만큼 인터랙션 가능한 요소의 숫자도 줄였습니다. 
+
+Archive 페이지 내 영상은 용량을 극단적으로 줄이기 위해 재렌더링이 진행되었고, '모바일 서비스 디자인 프로세스' 파트의 이미지들은 모두 resize 되었으나 해당 이미지 정보들이 프로세스 과정에 초점이 맞춰져 있기에 삭제하지 않았습니다. 때문에 해당 컴포넌트가 있는 위치를 스크롤이 지날 때 이미지 로딩 과정에서 30여개의 이미지 로드에 약간의 버벅임이 발생합니다.
+
+전역 state 관리 라이브러리로 기존의 익숙한 리덕스보다 가벼운 recoil을 처음으로 사용하게 된 계기도 위와 같은 맥락입니다. 
+
+해당 프로젝트를 진행하며, 인터랙션, 애니메이션, 이미지 등이 브라우저의 렌더링 연산에 심각한 성능저하를 야기시킬 수 있음을 알게 되었습니다. 또한 사용자 경험을 편하게 해주는 성능과 속도, 이와 별개로 사용자가 용인할 수 있는 수준의 성능, 속도는 어느 정도인지 고민해 볼 필요성이 있다고 생각합니다. 추가적으로 개발 중 gsap 라이브러리의 존재를 알게 되었으며, 대외적으로 jQuery 성능과 비교해 월등하다고 명세되어 있어, 향후 인터페이스, 인터랙션 분야 학습을 계속 하게된다면 우선적으로 학습할 예정입니다.
