@@ -2,7 +2,7 @@
 [https://archive-640e9.web.app/](https://archive-640e9.web.app/)
 
 ## 제작 기간
-6월 28일 ~ 7월 7일 (10일)  
+6월 28일 ~ 7월 7일
 1인 개발
 
 
