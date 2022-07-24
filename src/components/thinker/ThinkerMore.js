@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components";
 import { locState } from "../../App";
 
 import { BsInstagram } from "react-icons/bs";
+import OnScroll from "../global/OnScroll";
 
 const MoreWrapper = styled.div`
     position: relative;
@@ -87,6 +88,7 @@ const ThinkerMore = () => {
     const loc = useRecoilValue(locState);
     return (
         <MoreWrapper>
+            <OnScroll />
             <div className="desc">
                 <div className="desc-web">
                     <p loc={loc}>For</p>

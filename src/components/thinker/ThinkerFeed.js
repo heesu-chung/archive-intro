@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { locState } from "../../App";
 import Feed from "./feed/Feed";
 import { BsInstagram } from "react-icons/bs";
+import OnScroll from "../global/OnScroll";
 
 const FeedWrapper = styled.div`
     width: 100%;
@@ -51,6 +52,7 @@ const ThinkerFeed = () => {
 
     return (
         <>
+            <OnScroll />
             <FeedWrapper>
                 <FeedContents>
                     {[...imgArr1].map((el, idx) => (

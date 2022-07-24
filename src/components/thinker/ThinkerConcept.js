@@ -2,6 +2,7 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import styled, { css } from "styled-components";
 import { locState } from "../../App";
+import OnScroll from "../global/OnScroll";
 
 const ThinkerConceptWrapper = styled.div`
     width: 100%;
@@ -137,6 +138,7 @@ const ThinkerConcept = () => {
 
     return (
         <ThinkerConceptWrapper>
+            <OnScroll />
             <ThinkerConceptContainer loc={loc}>
                 <ThinkerConceptText loc={loc} idx={1}>
                     생각의 모양은

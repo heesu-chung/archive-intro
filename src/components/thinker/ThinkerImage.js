@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 import { locState } from "../../App";
 import ladder from "../../assets/ladder.gif";
 import titleLogo from "../../assets/title.png";
+import OnScroll from "../global/OnScroll";
 
 const ThinkerImgWrapper = styled.div`
     position: absolute;
@@ -75,6 +76,7 @@ const ThinkerImage = () => {
 
     return (
         <ThinkerImgWrapper>
+            <OnScroll />
             <ImageWrapper src={ladder} />
             <ThinkerTitleLogo>
                 <img src={titleLogo} alt=""></img>

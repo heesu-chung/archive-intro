@@ -6,6 +6,7 @@ import { locState } from "../../App";
 import Reel from "./reel/Reel";
 import Phone from "./reel/assets/IPhone_X.png";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
+import OnScroll from "../global/OnScroll";
 
 const ReelsWrapper = styled.div`
     position: relative;
@@ -107,6 +108,7 @@ const ThinkerReel = () => {
 
     return (
         <ReelsWrapper>
+            <OnScroll />
             <StickyReels>
                 {[...video].map((el, idx) => (
                     <Reel key={idx} idx={idx} el={el} />

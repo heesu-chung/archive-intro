@@ -2,6 +2,7 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import styled, { css } from "styled-components";
 import { locState } from "../../App";
+import OnScroll from "../global/OnScroll";
 
 const ThinkerTitleWrapper = styled.div`
     position: relative;
@@ -63,6 +64,7 @@ const ThinkerTitle = () => {
 
     return (
         <ThinkerTitleWrapper>
+            <OnScroll />
             <ThinkerWebWrapper>
                 <div className="container">
                     <ThinkerTitleText loc={loc} idx={1}>

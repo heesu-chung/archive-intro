@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 import { locState } from "../../App";
 import face from "../../assets/face.jpg";
 import plant from "../../assets/plant.gif";
+import OnScroll from "../global/OnScroll";
 
 const AboutWrapper = styled.div`
     /* border: 1px solid black; */
@@ -114,6 +115,7 @@ const ThinkerAbout = () => {
 
     return (
         <AboutWrapper>
+            <OnScroll />
             <FaceImg src={face} />
             {[...aboutText].map((el, idx) => (
                 <AboutText key={idx} idx={idx} el={el} loc={loc}>

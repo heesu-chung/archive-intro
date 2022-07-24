@@ -75,6 +75,19 @@ import Proto3 from "../components/archive/assets/0003.jpg";
 import Proto4 from "../components/archive/assets/0004.jpg";
 import Proto5 from "../components/archive/assets/0005.jpg";
 
+import Client1 from "../components/archive/assets/client01.png";
+import Client2 from "../components/archive/assets/client02.png";
+import Client3 from "../components/archive/assets/client03.png";
+import Client4 from "../components/archive/assets/client04.png";
+import Client5 from "../components/archive/assets/client05.jpg";
+import Client6 from "../components/archive/assets/client06.png";
+import Client7 from "../components/archive/assets/client07.jpg";
+import Client8 from "../components/archive/assets/client08.png";
+import Client9 from "../components/archive/assets/client09.png";
+import Client10 from "../components/archive/assets/client10.png";
+import Client12 from "../components/archive/assets/client12.png";
+import Client11 from "../components/archive/assets/client11.gif";
+
 import Art1 from "../components/archive/assets/art1.jpg";
 import Art2 from "../components/archive/assets/art2.jpg";
 import Art3 from "../components/archive/assets/art3.jpg";
@@ -90,6 +103,7 @@ import Gif5 from "../components/archive/assets/gif5.gif";
 import ArchiveArt from "../components/archive/ArchiveArt";
 import Modal from "../components/modal/Modal";
 import ArchiveMoyang from "../components/archive/ArchiveMoyang";
+import ArchiveClient from "../components/archive/ArchiveClient";
 
 const ArchiveWrapper = styled.div`
     width: 90%;
@@ -220,7 +234,7 @@ const Archive = () => {
                 <ArchiveGL1 />
                 <Blank web={400} mobile={150} />
                 <ImgContainer item={1}>
-                    <Img src={GL4} w="800" h="350" onClick={imgClick} />
+                    <Img src={GL4} w="600" h="500" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveGL2 />
                 <Blank web={400} mobile={150} />
@@ -232,7 +246,7 @@ const Archive = () => {
                 <ArchiveGL3 />
                 <Blank web={400} mobile={150} />
                 <ImgContainer item={1}>
-                    <Img src={GL8} w="800" h="350" onClick={imgClick} />
+                    <Img src={GL8} w="800" h="500" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveGL4 />
                 <Blank web={400} mobile={150} />
@@ -296,6 +310,22 @@ const Archive = () => {
                     <Img src={Service4} w="300" h="150" onClick={imgClick} />
                 </ImgContainer>
                 <ArchiveService />
+                <Blank web={400} mobile={150} />
+                <ImgContainer item={5}>
+                    <Img src={Client1} w="300" h="350" onClick={imgClick} />
+                    <Img src={Client7} w="300" h="350" onClick={imgClick} />
+                    <Img src={Client4} w="300" h="300" onClick={imgClick} />
+                    <Img src={Client6} w="300" h="350" onClick={imgClick} />
+                    <Img src={Client11} w="300" h="250" onClick={imgClick} />
+                </ImgContainer>
+                <ImgContainer item={5}>
+                    <Img src={Client12} w="300" h="460" onClick={imgClick} />
+                    <Img src={Client8} w="300" h="460" onClick={imgClick} />
+                    <Img src={Client5} w="300" h="250" onClick={imgClick} />
+                    <Img src={Client9} w="300" h="280" onClick={imgClick} />
+                    <Img src={Client10} w="300" h="460" onClick={imgClick} />
+                </ImgContainer>
+                <ArchiveClient />
                 <Blank web={400} mobile={150} />
                 <ImgContainer item={5}>
                     <Img src={Art2} w="400" h="230" onClick={imgClick} />
