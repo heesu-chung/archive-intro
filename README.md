@@ -15,6 +15,11 @@
 
 반응형 디자인으로 구현되었으며, 스크롤 추적 기능과 스크롤 위치에 따른 스타일링 변화, css3 애니메이션 구현과 html5 video 태그 등을 사용하였으며, 이외 세부적인 기능 구현들은 아래에 작성되었습니다.  
 
+- 스크롤 기반 인터랙션
+- setInterval 기반 애니메이션
+- 반응형 디자인
+- 인터랙션(Moyang 페이지) / flex(Kode Kat 페이지) / grid (Archive 페이지) 화면 구성  
+
 ## 기능 구현
 
 ### global 기능
@@ -97,7 +102,6 @@
 - Image Infinite Auto Slide 구현 - 10장의 이미지 세트에 동일한 추가 이미지 세트를 이어붙인 후, 이어붙인 이미지 세트의 첫번째 이미지가 기존 세트의 첫번째 이미지 위치에 도달할 시 가장 처음 이미지 위치로 translateX의 형식으로 구현  
 ![archive11](https://user-images.githubusercontent.com/68191058/179494659-81ed46c1-b385-41f9-8753-778c733a1665.gif)  
 
-- background linear-gradient 구현시 크로스 브라우징 이슈
 
 
 
