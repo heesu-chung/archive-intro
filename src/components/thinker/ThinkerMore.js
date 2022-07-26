@@ -8,7 +8,6 @@ import OnScroll from "../global/OnScroll";
 
 const MoreWrapper = styled.div`
     position: relative;
-    /* top: 100px; */
     z-index: 1;
 
     .desc {
@@ -26,7 +25,7 @@ const MoreWrapper = styled.div`
                 margin-top: -5px;
             }
             @media (min-width: 800px) {
-                width: 20%;
+                width: 100%;
                 background: black;
             }
         }
@@ -38,6 +37,7 @@ const MoreWrapper = styled.div`
 
     @media (min-width: 800px) {
         top: 80px;
+        width: 20%;
     }
 `;
 

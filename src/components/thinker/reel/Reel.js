@@ -17,7 +17,7 @@ const ReelWrapper = styled.video`
     left: 50%;
     transform: translateX(-50%);
     transition: 0.8s all ease-in-out;
-    z-index: 5;
+    z-index: 15;
     ${(props) =>
         props.idx === 0 && props.loc > 4500
             ? css`

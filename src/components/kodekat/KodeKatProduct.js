@@ -38,7 +38,7 @@ const ProductItems = styled.div`
     position: relative;
     @media (max-width: 800px) {
         width: 105%;
-        transform: translateX(-53%);
+        /* transform: translateX(-53%); */
     }
     @media (min-width: 800px) {
         width: 100%;
