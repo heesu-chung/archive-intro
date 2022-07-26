@@ -91,6 +91,7 @@ const textArr = [
     "Kode Kat은 마플샵을 통해 만나실 수 있습니다",
     "일상 속 작은 소품들부터 의류까지",
     "Kode Kat의 라이프 스타일을 바로 만나보세요!",
+    "( 리뉴얼 중입니다 )",
 ];
 
 const KodeKatBrand = () => {

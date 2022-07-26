@@ -10,7 +10,6 @@ import OnScroll from "../global/OnScroll";
 
 const ReelsWrapper = styled.div`
     position: relative;
-    /* border: 1px solid white; */
     height: 2000px;
     margin-top: 100px;
 
@@ -24,7 +23,7 @@ const StickyReels = styled.div`
     top: 100px;
 
     @media (min-width: 800px) {
-        top: 180px;
+        top: 18vh;
     }
 `;
 
@@ -41,8 +40,9 @@ const DirAnimation = keyframes`
 const ScrollNext = styled.div`
     width: 100%;
     height: 100px;
+
     position: absolute;
-    top: 600px;
+    top: 70vh;
 
     opacity: 0;
     transition: 0.5s all ease;
@@ -68,7 +68,7 @@ const ScrollNext = styled.div`
     }
 
     @media (min-width: 800px) {
-        height: 400px;
+        height: 70vh;
         background: black;
         transition: 0.3s all ease;
         z-index: 1;
@@ -94,10 +94,9 @@ const PhoneWrapper = styled.div`
         position: absolute;
         visibility: visible;
         z-index: 2;
-        width: 346px;
-        height: 560px;
-        left: 240px;
-        top: -55px;
+        width: 23vw;
+        left: 13vw;
+        top: -6vh;
     }
 `;
 

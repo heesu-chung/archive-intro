@@ -21,7 +21,7 @@ const FrontContainer = styled.div`
         margin-left: -180px;
         margin-top: 0;
         opacity: 0.5;
-        height: 850px;
+        height: 100vh;
     }
 `;
 

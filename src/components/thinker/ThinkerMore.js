@@ -8,7 +8,7 @@ import OnScroll from "../global/OnScroll";
 
 const MoreWrapper = styled.div`
     position: relative;
-    top: 100px;
+    /* top: 100px; */
     z-index: 1;
 
     .desc {

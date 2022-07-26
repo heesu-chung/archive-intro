@@ -60,7 +60,7 @@ const Thinker = () => {
                 <ThinkerConcept />
                 <ThinkerAbout />
                 <ThinkerFeed />
-                {/* <ThinkerModel /> */}
+                <ThinkerModel />
                 <ThinkerReel />
                 <ThinkerMore />
             </ThinkerWrapper>

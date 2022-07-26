@@ -17,7 +17,7 @@ const ReelWrapper = styled.video`
     left: 50%;
     transform: translateX(-50%);
     transition: 0.8s all ease-in-out;
-    z-index: 3;
+    z-index: 5;
     ${(props) =>
         props.idx === 0 && props.loc > 4500
             ? css`
@@ -80,15 +80,16 @@ const ReelWrapperWeb = styled.video`
         display: none;
     }
     @media (min-width: 800px) {
-        width: 300px;
-        height: 540px;
+        width: 20vw;
+
         transition: 1s all ease-out;
         position: absolute;
 
         overflow: hidden;
-        left: 263px;
+        top: 3vh;
+        left: 14.5vw;
 
-        z-index: 3;
+        z-index: 5;
         ${(props) =>
             props.idx === 0 && props.loc > 8800
                 ? css`

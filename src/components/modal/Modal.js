@@ -6,8 +6,8 @@ import { modalActiveState, srcState } from "../../pages/Archive";
 const ModalWrapper = styled.div`
     position: fixed;
     z-index: 10000;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
     background: black;

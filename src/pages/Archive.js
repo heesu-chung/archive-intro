@@ -177,7 +177,6 @@ const Img = styled.img`
     height: 100%;
     cursor: pointer;
     @media (min-width: 800px) {
-        /* width: ${(props) => props.w}px; */
         height: ${(props) => props.h}px;
         object-fit: cover;
     }

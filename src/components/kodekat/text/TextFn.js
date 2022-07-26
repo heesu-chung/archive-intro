@@ -38,7 +38,7 @@ const TextStyled = styled.p`
             @media (min-width: 800px) {
                 width: 100%;
                 left: 0%;
-                font-size: 16px;
+                font-size: 17px;
                 text-align: left;
                 margin: 5px 20px;
             }

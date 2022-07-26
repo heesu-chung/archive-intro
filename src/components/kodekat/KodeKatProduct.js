@@ -12,7 +12,6 @@ const ProductWrapper = styled.div`
     width: 100%;
     position: relative;
     background: black;
-
     @media (min-width: 800px) {
         display: flex;
         flex-direction: column;
@@ -42,10 +41,10 @@ const ProductItems = styled.div`
         transform: translateX(-53%);
     }
     @media (min-width: 800px) {
-        width: 102%;
+        width: 100%;
         display: flex;
         flex-direction: row;
-        transform: translateX(-14%);
+        /* transform: translateX(-14%); */
     }
 `;
 
@@ -67,7 +66,7 @@ const KodeKatProduct = () => {
             <PageSmooth />
             <ProductMainImg src={Puzzle} alt="" />
 
-            <ProductItems style={{ margin: "200px" }}>
+            <ProductItems style={{ margin: "200px 0" }}>
                 <ProductItemGroup style={{ flex: 3 }}>
                     <ProductItem src={P4} alt="" />
                 </ProductItemGroup>
